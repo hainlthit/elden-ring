@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
 
+    def index
+        users = User.all
+        render json: users, status: :ok
+    end
+
     def create 
         user = User.create!(user_params)
         render json: user, status: :created
@@ -8,7 +13,7 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.permit(:name, :password)
+        params.permit(:username, :password)
     end 
 
 end
