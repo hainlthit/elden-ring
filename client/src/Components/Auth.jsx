@@ -8,8 +8,10 @@ function Auth() {
 
     function onSubmit(e){
         e.preventDefault()
+        console.log(username)
+        console.log(password)
         const user = {
-            name: username,
+            username: username,
             password
         }
        
@@ -20,7 +22,7 @@ function Auth() {
         })
         .then(res => res.json())
         .then(json => {
-            console.log(json)
+            // console.log(json)
             if(json.errors) setErrors(Object.entries(json.errors))
         })
     }
