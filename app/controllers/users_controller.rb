@@ -10,10 +10,12 @@ class UsersController < ApplicationController
         render json: user, status: :created
     end 
 
+    # https://learning.flatironschool.com/courses/4568/pages/authorizing-requests?module_item_id=362898
+
     private
 
     def user_params
-        params.permit(:username, :password)
+        params.permit(:username, :password, :is_admin)
     end 
 
 end
