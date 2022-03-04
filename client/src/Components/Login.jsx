@@ -3,15 +3,17 @@ import React, {useState} from 'react'
 function Login() {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
+    const [is_admin, setIs_Admin] = useState('')
    
     const [errors, setErrors] = useState([])
 
     function onSubmit(e){
         e.preventDefault()
         const user = {
-            username: username,
-            password
-        }
+          username: username,
+          password, 
+          is_admin
+      }
        
         fetch(`/login`,{
           method:'POST',
