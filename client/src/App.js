@@ -27,7 +27,6 @@ function App() {
     });
   })
 
-
   return (
     <div>
         <NavBar setIsAuthenticated={setIsAuthenticated} isAuthenticated={isAuthenticated} user={user} setUser={setUser} />
