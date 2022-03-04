@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-function Auth() {
+function Auth({setIsAuthenticated, setUser}) {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
    
