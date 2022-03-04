@@ -3,18 +3,15 @@ import React, {useState} from 'react'
 function Auth() {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
-    const [is_admin, setIs_Admin] = useState('')
    
     const [errors, setErrors] = useState([])
 
     function onSubmit(e){
         e.preventDefault()
-        console.log(is_admin)
         console.log('submitting...')
         const user = {
             username: username,
-            password, 
-            is_admin
+            password
         }
        
         fetch(`/users`,{

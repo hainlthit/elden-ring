@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.permit(:username, :password, :is_admin)
+        params.permit(:username, :password)
     end 
 
 end
