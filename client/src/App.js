@@ -6,28 +6,24 @@ import {useEffect, useState} from 'react'
 //components
 import NavBar from './Components/NavBar';
 
-
-
 function App() {
 
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
 
 
-  useEffect(() => {
-    fetch("/authorized_user")
-    .then((res) => {
-      if (res.ok) {
-        res.json()
-        .then((user) => {
-          setIsAuthenticated(true);
-          setUser(user);
-        });
-      }
-    });
-  })
-
-
+  // useEffect(() => {
+  //   fetch("/authorized_user")
+  //   .then((res) => {
+  //     if (res.ok) {
+  //       res.json()
+  //       .then((user) => {
+  //         setIsAuthenticated(true);
+  //         setUser(user);
+  //       });
+  //     }
+  //   });
+  // })
 
 
   return (
@@ -41,6 +37,7 @@ function App() {
             <Route exact path="/sign-up" element={<Auth/>} /> 
             <Route exact path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} setUser={setUser} />} /> 
         </Routes>
+        {isAuthenticated? <p>yes</p>:<p>nah fam</p>}
     </div>
   )
   
