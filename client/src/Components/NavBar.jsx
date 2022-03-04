@@ -2,7 +2,18 @@ import React from 'react'
 
 import { NavLink } from 'react-router-dom'
 
-function NavBar({isAuthenticated}) {
+function NavBar({isAuthenticated, setIsAuthenticated, user, setUser}) {
+
+    function logout() {
+        fetch('/logout',{
+            method:'DELETE'
+        })
+        .then(()=>{
+            setIsAuthenticated(false)
+            setUser(null)
+        })
+    }
+
   return (
     <div>
         <ul>
@@ -12,18 +23,23 @@ function NavBar({isAuthenticated}) {
                 </NavLink>
             </li>
             <li>
-                <NavLink to="/login" exact>
+               {user? <li onClick={logout}> Logout </li> : 
+               <NavLink to="/login" exact>
                     Login
-                </NavLink>
+                </NavLink>} 
             </li>
-
-            {isAuthenticated?             
             <li>
                 <NavLink to="/" exact>
                     Back to Home
                 </NavLink>
+            </li>
+            {isAuthenticated?             
+            <li>
+                <NavLink to="/spells" exact>
+                    Spells
+                </NavLink>
             </li>:
-            <p>nah fam</p>}
+            <p> </p>}
         </ul>
     </div>
   )
