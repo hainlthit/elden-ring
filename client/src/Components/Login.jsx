@@ -1,10 +1,9 @@
 import React, {useState} from 'react'
 
-function Login() {
+function Login({setIsAuthenticated, setUser}) {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
-    const [is_admin, setIs_Admin] = useState('')
-   
+
     const [errors, setErrors] = useState([])
 
     function onSubmit(e){
@@ -12,7 +11,6 @@ function Login() {
         const user = {
           username: username,
           password, 
-          is_admin
       }
        
         fetch(`/login`,{
@@ -20,11 +18,19 @@ function Login() {
           headers:{'Content-Type': 'application/json'},
           body:JSON.stringify(user)
         })
-        .then(res => res.json())
-        .then(json => {
-            console.log(json)
-            if(json.errors) setErrors(json.errors)
-        })
+        .then(res => {  
+          if(res.ok){
+          res.json()
+          .then(user=>{
+            setUser(user)
+            setIsAuthenticated(true)
+          })
+          
+        } else {
+          res.json()
+          .then(json => setErrors(json.error))
+        }
+      })
     }
     return (
         <> 
