@@ -2,7 +2,7 @@ import React from 'react'
 
 import { NavLink } from 'react-router-dom'
 
-function NavBar() {
+function NavBar({isAuthenticated}) {
   return (
     <div>
         <ul>
@@ -16,11 +16,14 @@ function NavBar() {
                     Login
                 </NavLink>
             </li>
+
+            {isAuthenticated?             
             <li>
                 <NavLink to="/" exact>
                     Back to Home
                 </NavLink>
-            </li>
+            </li>:
+            <p>nah fam</p>}
         </ul>
     </div>
   )

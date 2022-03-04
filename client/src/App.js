@@ -28,7 +28,7 @@ function App() {
 
   return (
     <div>
-        <NavBar/>
+        <NavBar isAuthenticated={isAuthenticated} />
         <p>
         HELLO WORLD
         </p>
@@ -37,7 +37,7 @@ function App() {
             <Route exact path="/sign-up" element={<Auth/>} /> 
             <Route exact path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} setUser={setUser} />} /> 
         </Routes>
-        {isAuthenticated? <p>yes</p>:<p>nah fam</p>}
+        
     </div>
   )
   
