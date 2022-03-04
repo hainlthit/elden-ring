@@ -42,7 +42,7 @@ function Login() {
        
         <input type="submit" value="Login!" />
       </form>
-      {errors?errors.map(e => <div>{e}</div>):null}
+      {/* {errors?errors.map(e => <div>{e}</div>):null} */}
         </>
     )
 }
