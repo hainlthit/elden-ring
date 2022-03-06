@@ -10,6 +10,10 @@ class UsersController < ApplicationController
         render json: user, status: :created
     end 
 
+    def show
+        render json: current_user, status: :ok
+    end 
+
     # https://learning.flatironschool.com/courses/4568/pages/authorizing-requests?module_item_id=362898
 
     private
