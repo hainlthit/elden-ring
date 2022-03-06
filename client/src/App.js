@@ -14,18 +14,18 @@ function App() {
   const [user, setUser] = useState(null);
 
 
-  useEffect(() => {
-    fetch("/authorized_user")
-    .then((res) => {
-      if (res.ok) {
-        res.json()
-        .then((user) => {
-          setIsAuthenticated(true);
-          setUser(user);
-        });
-      }
-    });
-  })
+  // useEffect(() => {
+  //   fetch("/authorized_user")
+  //   .then((res) => {
+  //     if (res.ok) {
+  //       res.json()
+  //       .then((user) => {
+  //         setIsAuthenticated(true);
+  //         setUser(user);
+  //       });
+  //     }
+  //   });
+  // })
 
   return (
     <div>

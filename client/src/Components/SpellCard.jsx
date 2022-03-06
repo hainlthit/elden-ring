@@ -1,6 +1,8 @@
 import React from 'react'
 
 export default function SpellCard() {
+  // console.log(spellname)
+// {spellname, spelltype, effect, image, fp}
   return (
     <>
       <div className="card">
