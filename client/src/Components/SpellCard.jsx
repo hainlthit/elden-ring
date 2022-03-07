@@ -1,16 +1,16 @@
 import React from 'react'
 
-export default function SpellCard() {
-  // console.log(spellname)
-// {spellname, spelltype, effect, image, fp}
+export default function SpellCard({spellObj}) {
   return (
     <>
-      <div className="card">
-        <div className="blog-content">
-            <a href={"https://eldenring.wiki.fextralife.com/Death+Lightning"} className="spell-link">
-                <img src={"https://eldenring.wiki.fextralife.com/file/Elden-Ring/death_lightning_incantation-icon_elden_ring_wiki_guide_200px.png"} alt="blog-image"/>
-                    <p>DEATH LIGHTNING</p> 
-                </a> <br /> 
+      <div className="spell-card">
+        <div className="spell-content">
+                <img src={spellObj.image} alt={spellObj.spellname}/>
+                    <h4>{spellObj.spellname}</h4> 
+                    <p>Spell Type: {spellObj.spelltype}</p> 
+                    <p>FP: {spellObj.fp}</p> 
+                    <p>Effect: {spellObj.effect}</p> 
+                <br/> 
             </div>
          </div>  
     </>

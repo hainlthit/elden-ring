@@ -40,6 +40,13 @@ function NavBar({isAuthenticated, setIsAuthenticated, user, setUser}) {
                 </NavLink>
             </li>:
             <p> </p>}
+            {isAuthenticated?             
+            <li>
+                <NavLink to="/classes" exact>
+                    Classes
+                </NavLink>
+            </li>:
+            <p> </p>}
         </ul>
     </div>
   )

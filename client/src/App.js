@@ -1,12 +1,17 @@
 import './App.css';
-import Auth from "../src/Components/Auth.jsx"
-import Login from "../src/Components/Login.jsx"
 import { Route, Routes } from 'react-router-dom'
 import {useEffect, useState} from 'react'
-import Spells from './Components/Spells';
+
 //components
 import NavBar from './Components/NavBar';
 import LoginAd from './Components/LoginAd';
+import Auth from "../src/Components/Auth.jsx"
+import Login from "../src/Components/Login.jsx"
+
+//pages
+import Spells from './Components/Spells';
+import Classes from './Pages/Classes';
+
 
 function App() {
 
@@ -30,13 +35,14 @@ function App() {
   return (
     <div>
         <NavBar setIsAuthenticated={setIsAuthenticated} isAuthenticated={isAuthenticated} user={user} setUser={setUser} />
-        <p>
-        HELLO WORLD
-        </p>
+        <h1>
+       Elden Ring Wiki App
+        </h1>
         
         <Routes>
             <Route exact path="/sign-up" element={<Auth/>} /> 
             <Route exact path="/spells" element={<Spells/>} /> 
+            <Route exact path="/classes" element={<Classes/>} /> 
             <Route exact path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} setUser={setUser} />} /> 
         </Routes>
         {isAuthenticated? <LoginAd/> : <p>Placeholder for "You need to make and Account" </p>}
