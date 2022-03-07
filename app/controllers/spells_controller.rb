@@ -22,6 +22,12 @@ class SpellsController < ApplicationController
         render json: spell, status: :ok
     end 
 
+    def destroy
+        spell = Spell.find(params[:id])
+        spell.destroy
+        head :no_content 
+    end 
+
     private
 
     def spell_params

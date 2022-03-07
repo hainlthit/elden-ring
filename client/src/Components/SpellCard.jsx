@@ -2,9 +2,18 @@ import React, { useState } from 'react';
 import EditSpell from "./EditSpell";
 
 
-export default function SpellCard({ id, spellname, spelltype, image, effect, fp, handleUpdateSpell}) {
+export default function SpellCard({ id, spellname, spelltype, image, effect, fp, handleUpdateSpell, handleDeleteSpell}) {
 
   const [isEditing, setIsEditing] = useState(false);
+
+  function handleDelete(){
+    fetch(`http://localhost:3000/spells/${id}`, { 
+      method: 'DELETE',
+    })
+    .then((r) => r.json())
+    .then((deletedSpell) => handleDeleteSpell(deletedSpell))
+  }
+
   
   return (
       <div className="spell-card">
@@ -29,6 +38,7 @@ export default function SpellCard({ id, spellname, spelltype, image, effect, fp,
                 EDIT
               </span>
         </button>
+        <button onClick={handleDelete} className="delete-event-btn">X</button>
         <br/>
         <br/>
         </div>

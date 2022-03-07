@@ -24,6 +24,17 @@ function Spells() {
     setSpellData(editedSpells);
   }
 
+  function handleDeleteSpell(spellToDelete){
+    const updatedSpells = spellData.filter((spell) => {
+      if (spell.id !== spellToDelete.id) {
+        return spell
+      } else {
+        return null
+      }
+    });
+    setSpellData(updatedSpells);
+  }
+
   const spellCards = spellData.map((spell)=>
   
   <SpellCard
@@ -35,6 +46,7 @@ function Spells() {
     effect={spell.effect}
     fp={spell.fp}
     handleUpdateSpell={handleUpdateSpell}
+    handleDeleteSpell={handleDeleteSpell}
   /> )
   
   return (
