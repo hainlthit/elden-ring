@@ -15,6 +15,13 @@ class SpellsController < ApplicationController
         render json: new_spell, status: :created
     end
 
+    
+    def update 
+        spell = Spell.find(params[:id])
+        spell.update!(spell_params)
+        render json: spell, status: :ok
+    end 
+
     private
 
     def spell_params

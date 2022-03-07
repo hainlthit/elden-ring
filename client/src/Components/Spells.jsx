@@ -3,6 +3,7 @@ import SpellCard from './SpellCard';
 import {useEffect, useState} from "react";
 import SpellsForm from "./SpellsForm";
 
+
 function Spells() {
   const [spellData, setSpellData] = useState([''])
 
@@ -12,15 +13,28 @@ function Spells() {
       .then(data => setSpellData(data))
   }, [])
   
+  function handleUpdateSpell(updatedSpell) {
+    const editedSpells = spellData.map((spell) => {
+      if (spell.id === updatedSpell.id) {
+        return updatedSpell;
+      } else {
+        return spellData;
+      }
+    });
+    setSpellData(editedSpells);
+  }
+
   const spellCards = spellData.map((spell)=>
+  
   <SpellCard
     key = {spell.id}
+    id = {spell.id}
     spellname={spell.spellname}
     spelltype={spell.spelltype}
     image={spell.image}
     effect={spell.effect}
     fp={spell.fp}
-
+    handleUpdateSpell={handleUpdateSpell}
   /> )
   
   return (
