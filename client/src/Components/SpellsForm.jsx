@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
-function SpellsForm({}) {
+function SpellsForm(spellData, setSpellData) {
 
    const [spellname, setSpellname] = useState("");
    const [spelltype, setSpelltype] = useState("")
    const [spelltypedata, setSpelltypedata] = useState([])
-   const [image, setImage] = useState("")
+   const [image, setImage] = useState('')
    const [effect, setEffect] = useState("")
    const [fp, setFp] = useState("")
    
@@ -20,7 +20,7 @@ function SpellsForm({}) {
     }, [])
 
     const spelltypeOptions = spelltypedata.map(({ id, spelltype }) => 
-    <option  key={id} value={id}>{spelltype}</option>
+    <option  key={id} value={spelltype}>{spelltype}</option>
     )
 
     function handleSetSpelltype(e) {
@@ -38,17 +38,31 @@ function SpellsForm({}) {
     function handleSetFp(e) {
         setFp(e.target.value)
     }
-
+    
     function handleSubmit(e){
         e.preventDefault();
-        const newSpellObj = {
-            spellname: spellname,
-            spelltype: spelltype,
-            image: image,
-            effect: effect,
-            fp: fp
-        }
         
+        const newSpellObj = {
+           spellname: spellname,
+           spelltype: spelltype,
+            image: image,
+           effect: effect,
+           fp: fp
+        }
+
+        console.log(newSpellObj)
+
+         fetch('/spells', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body:JSON.stringify(newSpellObj),
+            })
+         
+            .then(res => res.json())
+            .then(data => {console.log(data)
+                setSpellData([...spellData, data])
+            })
+            
         
     }
    return (

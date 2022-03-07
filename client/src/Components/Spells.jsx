@@ -15,14 +15,19 @@ function Spells() {
   const spellCards = spellData.map((spell)=>
   <SpellCard
     key = {spell.id}
-    spellObj={spell}
+    spellname={spell.spellname}
+    spelltype={spell.spelltype}
+    image={spell.image}
+    effect={spell.effect}
+    fp={spell.fp}
+
   /> )
   
   return (
     <div>
         <h2>All Spells Listed Below:</h2>
         {spellCards}
-        <SpellsForm/>
+        <SpellsForm spellData={spellData} setSpellData={setSpellData}/>
         
     </div>
   )

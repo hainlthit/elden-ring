@@ -9,4 +9,17 @@ class SpellsController < ApplicationController
         spell = Spell.find(params[:id])
         render json: spell, status: :ok
     end
+
+    def create
+        new_spell = Spell.create!(spell_params)
+        render json: new_spell, status: :created
+    end
+
+    private
+
+    def spell_params
+        params.permit(:spellname, :spelltype, :effect, :type, :fp)
+    end
+
+
 end
