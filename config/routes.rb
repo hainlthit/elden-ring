@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :er_classes
+  resources :skills
   resources :spells, only: [:index, :show, :create, :update, :destroy]
   resources :users, only: [:index, :create]
   post "/login", to: "sessions#login"

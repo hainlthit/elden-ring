@@ -1,0 +1,2 @@
+class ErClass < ApplicationRecord
+end

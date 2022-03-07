@@ -10,10 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_06_213516) do
+ActiveRecord::Schema.define(version: 2022_03_07_232150) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "er_classes", force: :cascade do |t|
+    t.string "name"
+    t.integer "level"
+    t.string "info"
+    t.string "weapons"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "skills", force: :cascade do |t|
+    t.string "skill_name"
+    t.string "skill_type"
+    t.string "equipment"
+    t.integer "fp"
+    t.string "effect"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "spells", force: :cascade do |t|
     t.string "spellname"

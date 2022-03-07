@@ -1,0 +1,2 @@
+class ErClassesController < ApplicationController
+end
