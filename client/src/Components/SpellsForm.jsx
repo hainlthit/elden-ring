@@ -58,7 +58,7 @@ function SpellsForm(spellData, setSpellData) {
          
             .then(res => res.json())
             .then(data => {console.log(data)
-                setSpellData([...spellData, data])
+                // setSpellData([...spellData, data])
             })
             
         
