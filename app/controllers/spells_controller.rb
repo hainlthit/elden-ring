@@ -18,7 +18,7 @@ class SpellsController < ApplicationController
     private
 
     def spell_params
-        params.permit(:spellname, :spelltype, :effect, :type, :fp)
+        params.permit(:spellname, :spelltype, :effect, :image, :fp)
     end
 
 

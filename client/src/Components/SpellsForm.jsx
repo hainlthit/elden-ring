@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 function SpellsForm(spellData, setSpellData) {
 
    const [spellname, setSpellname] = useState("");
    const [spelltype, setSpelltype] = useState("")
-   const [spelltypedata, setSpelltypedata] = useState([])
    const [image, setImage] = useState('')
    const [effect, setEffect] = useState("")
    const [fp, setFp] = useState("")
@@ -13,14 +12,13 @@ function SpellsForm(spellData, setSpellData) {
         setSpellname(e.target.value)
     }
 
-    useEffect(() => {
-        fetch(`http://localhost:3000/spells`)
-        .then(r => r.json())
-        .then(data => setSpelltypedata(data))
-    }, [])
+    let spelltypedata = [ 
+        { label: "Incantation", value: "Incantation"},
+        { label: "Sorcery", value: "Sorcery"}
+    ]
 
-    const spelltypeOptions = spelltypedata.map(({ id, spelltype }) => 
-    <option  key={id} value={spelltype}>{spelltype}</option>
+    const spelltypeOptions = spelltypedata.map((spelltypedata) => 
+    <option  key={spelltypedata.label} value={spelltypedata.value}>{spelltypedata.label}</option>
     )
 
     function handleSetSpelltype(e) {
@@ -73,7 +71,7 @@ function SpellsForm(spellData, setSpellData) {
     <form onSubmit={handleSubmit} className="form">
     <label className="input-label">Spell Type: </label>
     <br/>
-        <select onChange={handleSetSpelltype}>
+        <select  onChange={handleSetSpelltype}>
             {spelltypeOptions}
         </select>
         <br/>
