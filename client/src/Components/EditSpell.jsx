@@ -36,7 +36,9 @@ export default function EditSpell({id, spellname, spelltype, image, effect, fp, 
     <option  key={spelltypedata.label} value={spelltypedata.value}>{spelltypedata.label}</option>
     )
 
-
+    // const refreshPage = ()=>{
+    //     window.location.reload();
+    //  }
     function handleSubmit(e) {
         e.preventDefault();
     
@@ -55,7 +57,8 @@ export default function EditSpell({id, spellname, spelltype, image, effect, fp, 
         })
           .then((r) => r.json())
           .then((updatedSpell) => handleUpdateSpell(updatedSpell))
-          .then(() => setIsEditing(false));
+          .then(() => setIsEditing(false))
+        //   .then(refreshPage)
       }
 
   return (

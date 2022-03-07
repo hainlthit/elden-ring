@@ -11,7 +11,7 @@ function Spells() {
     fetch('http://localhost:3000/spells')
       .then(r => r.json())
       .then(data => setSpellData(data))
-  }, [])
+  }, [spellData])
   
   function handleUpdateSpell(updatedSpell) {
     const editedSpells = spellData.map((spell) => {

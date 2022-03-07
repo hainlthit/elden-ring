@@ -6,12 +6,17 @@ export default function SpellCard({ id, spellname, spelltype, image, effect, fp,
 
   const [isEditing, setIsEditing] = useState(false);
 
+//   const refreshPage = ()=>{
+//     window.location.reload();
+//  }
+
   function handleDelete(){
     fetch(`http://localhost:3000/spells/${id}`, { 
       method: 'DELETE',
     })
     .then((r) => r.json())
     .then((deletedSpell) => handleDeleteSpell(deletedSpell))
+    // .then(refreshPage)
   }
 
   
