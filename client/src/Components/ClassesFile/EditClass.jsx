@@ -43,13 +43,8 @@ export default function EditClass({id, classObj, setIsEditing, handleUpdateClass
           .then((r) => r.json())
           .then((updatedClass) => handleUpdateClass(updatedClass))
           .then(() => setIsEditing(false))
-    
       }
-    //   name={classObj.name}
-    //   level={classObj.level}
-    //   image={classObj.image}
-    //   info={classObj.info}
-    //   weapons={classObj.weapons}
+
   return (
       <>
     <br/>

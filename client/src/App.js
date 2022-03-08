@@ -11,6 +11,7 @@ import Login from "../src/Components/Login.jsx"
 //pages
 import Spells from './Components/Spells';
 import Classes from './Components/Classes';
+import Skills from './Components/Skills File/Skills';
 
 
 function App() {
@@ -41,8 +42,9 @@ function App() {
         
         <Routes>
             <Route exact path="/sign-up" element={<Auth/>} /> 
-            <Route exact path="/spells" element={<Spells/>} /> 
             <Route exact path="/classes" element={<Classes/>} /> 
+            <Route exact path="/spells" element={<Spells/>} /> 
+            <Route exact path="/skills" element={<Skills/>} /> 
             <Route exact path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} setUser={setUser} />} /> 
         </Routes>
         {isAuthenticated? <LoginAd/> : <p>Placeholder for "You need to make and Account" </p>}

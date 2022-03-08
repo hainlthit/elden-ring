@@ -38,3 +38,22 @@ ErClass.create(
     weapons: "Great Knife, Shortbow, Buckler Shields, Sleepbone Arrows",
     image: "https://eldenring.wiki.fextralife.com/file/Elden-Ring/bandit_class_elden_ring_wiki_guide_200px.png",
 )
+
+#skills
+Skill.create(
+    skill_name: "BUCKLER PARRY",
+    skill_type: "Regular",
+    equipment: "Buckler",
+    fp: "none",
+    effect: "This skill allows you to parry with your shield on your right hand, and performs it a lot faster than a regular parry.",
+    image: "https://eldenring.wiki.fextralife.com/file/Elden-Ring/buckler-parry-skill-elden-ring-wiki-guide.jpg",
+)
+
+Skill.create(
+    skill_name: "SQUARE OFF",
+    skill_type: "Regular",
+    equipment: "Longsword",
+    fp: "8/12",
+    effect: "Slash up through enemy guards with a normal attack, or run and thrust with a strong attack.",
+    image: "https://eldenring.wiki.fextralife.com/file/Elden-Ring/square-off-skill-elden-ring-wiki-guide.jpg",
+)

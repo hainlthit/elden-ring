@@ -47,6 +47,13 @@ function NavBar({isAuthenticated, setIsAuthenticated, user, setUser}) {
                 </NavLink>
             </li>:
             <p> </p>}
+            {isAuthenticated?             
+            <li>
+                <NavLink to="/skills" exact>
+                    Skills
+                </NavLink>
+            </li>:
+            <p> </p>}
         </ul>
     </div>
   )
