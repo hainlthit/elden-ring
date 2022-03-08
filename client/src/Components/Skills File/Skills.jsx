@@ -5,12 +5,12 @@ import SkillForm from './SkillForm';
 
 export default function Skills() {
     const [skillData, setSkillData] = useState([''])
-  
+
     useEffect(() => {
     fetch('http://localhost:3000/skills')
       .then(r => r.json())
       .then(data => setSkillData(data))
-  }, [])
+  }, [skillData])
 
   function handleUpdateSkill(updatedSkill) {
     const editedSkill = skillData.map((skill) => {
@@ -31,22 +31,12 @@ export default function Skills() {
         return null
       }
     });
-    setSkillData(updatedSkill);
+    handleAddSkill(updatedSkill);
   }
-
-  function handlePost(obj){
-    fetch('/skills',{
-      method:'POST',
-      headers: {'Content-Type': 'application/json'},
-      body:JSON.stringify(obj)
-    })
-    .then(res => res.json())
-    .then(data => {
-      console.log(data)
-        setSkillData([...skillData,data])
-      }
-    )
-}
+// WORK IN PROGRESS
+  function handleAddSkill(addedSkill) {
+    setSkillData((skillData) => [...skillData, addedSkill])
+  }
 
   const skillCards = skillData.map((skills)=> 
   <SkillCard
@@ -61,7 +51,7 @@ export default function Skills() {
     <div>
         <h2>All Skills Listed Below:</h2>
         {skillCards}
-        <SkillForm handlePost={handlePost} skillData={skillData} setSkillData={setSkillData}/>
+        <SkillForm skillData={skillData} setSkillData={setSkillData}/>
     </div>
   )
 }

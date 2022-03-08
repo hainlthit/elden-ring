@@ -57,3 +57,25 @@ Skill.create(
     effect: "Slash up through enemy guards with a normal attack, or run and thrust with a strong attack.",
     image: "https://eldenring.wiki.fextralife.com/file/Elden-Ring/square-off-skill-elden-ring-wiki-guide.jpg",
 )
+
+Comment.create(
+    message: "yo this game is crazy!",
+    user_id: 1,
+)
+Comment.create(
+    message: "so gnarly XD",
+    user_id: 2,
+)
+
+Profile.create(
+    username: "1234",
+    color1: "#34ebbd",
+    color2: "#7434eb",
+)
+
+User.create(
+    username: "1234",
+    is_admin: false,
+    profile_id: 1,
+    password: "1234",
+)

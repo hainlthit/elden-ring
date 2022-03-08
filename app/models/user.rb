@@ -1,4 +1,5 @@
 class User < ApplicationRecord
     has_secure_password
-    # hello hain
+    belongs_to :profile
+    has_many :comments
 end

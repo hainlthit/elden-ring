@@ -2,7 +2,7 @@ import React from 'react'
 import { useState} from "react";
 import EditSkill from './EditSkill';
 
-export default function SkillCard({skillObj, id, handleUpdateSkill}) {
+export default function SkillCard({skillObj, id, handleUpdateSkill, handleDeleteSkill}) {
     const [isEditing, setIsEditing] = useState(false);
 
     function handleDelete(){
@@ -10,13 +10,12 @@ export default function SkillCard({skillObj, id, handleUpdateSkill}) {
           method: 'DELETE',
         })
         .then((r) => r.json())
-        // .then((deletedClass) => handleDeleteClass(deletedClass))
+        .then((deletedSkill) => handleDeleteSkill(deletedSkill))
       }
 
   return (
     <div className="skill-card">
         {isEditing ? (
-
           <EditSkill
             setIsEditing={setIsEditing}
             id={id}

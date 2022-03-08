@@ -1,4 +1,5 @@
 import './App.css';
+import './index.css'
 import { Route, Routes } from 'react-router-dom'
 import {useEffect, useState} from 'react'
 
@@ -7,6 +8,7 @@ import NavBar from './Components/NavBar';
 import LoginAd from './Components/LoginAd';
 import Auth from "../src/Components/Auth.jsx"
 import Login from "../src/Components/Login.jsx"
+import MainContainer from './Components/MainContainer';
 
 //pages
 import Spells from './Components/Spells';
@@ -48,6 +50,7 @@ function App() {
             <Route exact path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} setUser={setUser} />} /> 
         </Routes>
         {isAuthenticated? <LoginAd/> : <p>Placeholder for "You need to make and Account" </p>}
+        <MainContainer/>
     </div>
   )
   

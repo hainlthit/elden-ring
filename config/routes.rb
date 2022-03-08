@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   
+  resources :comments, only: [:index, :create]
+  resources :profiles, only: [:index, :create, :update]
   resources :er_classes, only: [:index, :show, :create, :update, :destroy]
   resources :skills, only: [:index, :show, :create, :update, :destroy]
   resources :spells, only: [:index, :show, :create, :update, :destroy]
-  resources :users, only: [:index, :create]
+  resources :users, only: [:index, :show, :create]
   
   post "/login", to: "sessions#login"
   delete "/logout", to: "sessions#logout"

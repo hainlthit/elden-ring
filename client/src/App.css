@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+/* CSS STARTS HERE */
+
+.messages-container {
+  border: 1px red;
+}
