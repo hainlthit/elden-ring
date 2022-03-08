@@ -34,6 +34,10 @@ export default function Skills() {
     setSkillData(updatedSkill);
   }
 
+  function handleAddSkill(addedSkill) {
+    setSkillData((skillData) => [...skillData, addedSkill])
+  }
+
   const skillCards = skillData.map((skills)=> 
   <SkillCard
     key = {skills.id}
