@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function SkillForm(skillData, setSkillData) {
+export default function SkillForm({handlePost}) {
 
   const [skillName, setSkillName] = useState("");
   const [skillType, setSkillType] = useState("")
@@ -52,11 +52,7 @@ export default function SkillForm(skillData, setSkillData) {
            headers: {'Content-Type': 'application/json'},
            body:JSON.stringify(newSkillObj),
            })
-        
-           .then(res => res.json())
-           .then(data => {console.log(data)
-               // setSkillData([...skillData, data])
-           })
+           handlePost(newSkillObj)
        
    }
   return (

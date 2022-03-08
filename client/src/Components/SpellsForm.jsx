@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function SpellsForm(spellData, setSpellData) {
+function SpellsForm({handlePost}) {
 
    const [spellname, setSpellname] = useState("");
    const [spelltype, setSpelltype] = useState("")
@@ -43,23 +43,11 @@ function SpellsForm(spellData, setSpellData) {
         const newSpellObj = {
            spellname: spellname,
            spelltype: spelltype,
-            image: image,
+           image: image,
            effect: effect,
            fp: fp
         }
-
-        console.log(newSpellObj)
-
-         fetch('/spells', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body:JSON.stringify(newSpellObj),
-            })
-         
-            .then(res => res.json())
-            .then(data => {console.log(data)
-                // setSpellData([...spellData, data])
-            })
+        handlePost(newSpellObj)
         
     }
    return (

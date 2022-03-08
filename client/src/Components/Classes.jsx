@@ -5,12 +5,13 @@ import ClassesForm from './ClassesFile/ClassesForm';
 
 function Classes() {
   const [classData, setClassData] = useState([''])
+  const [errors, setErrors] = useState(false)
 
   useEffect(() => {
     fetch('http://localhost:3000/er_classes')
       .then(r => r.json())
       .then(data => setClassData(data))
-  }, [classData])
+  }, [])
   
   function handleUpdateClass(updatedClass) {
     const editedClasses = classData.map((er_class) => {
@@ -34,6 +35,23 @@ function Classes() {
     setClassData(updatedClasses);
   }
 
+  function handlePost(obj){
+    fetch('/er_classes',{
+      method:'POST',
+      headers: {'Content-Type': 'application/json'},
+      body:JSON.stringify(obj)
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data)
+      if(data.errors){
+        setErrors(data.errors)
+      } else {
+        setClassData([...classData,data])
+      }
+    })
+}
+
   const classCards = classData.map((er_class)=> 
   <ClassCard
     key = {er_class.id}
@@ -47,7 +65,7 @@ function Classes() {
     <div>
         <h2>All Classes Listed Below:</h2>
         {classCards}
-        <ClassesForm classData={classData} setClassData={setClassData}/>
+        <ClassesForm handlePost={handlePost} classData={classData} setClassData={setClassData}/>
     </div>
   )
 }

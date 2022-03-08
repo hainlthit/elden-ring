@@ -5,12 +5,13 @@ import SpellsForm from "./SpellsForm";
 
 function Spells() {
   const [spellData, setSpellData] = useState([''])
+  const [errors, setErrors] = useState(false)
 
   useEffect(() => {
     fetch('http://localhost:3000/spells')
       .then(r => r.json())
       .then(data => setSpellData(data))
-  }, [spellData])
+  }, [])
   
   function handleUpdateSpell(updatedSpell) {
     const editedSpells = spellData.map((spell) => {
@@ -20,7 +21,7 @@ function Spells() {
         return spellData;
       }
     });
-    setSpellData(editedSpells);
+    setSpellData([...spellData, editedSpells]);
   }
 
   function handleDeleteSpell(spellToDelete){
@@ -33,6 +34,23 @@ function Spells() {
     });
     setSpellData(updatedSpells);
   }
+
+  function handlePost(obj){
+    fetch('/spells',{
+      method:'POST',
+      headers: {'Content-Type': 'application/json'},
+      body:JSON.stringify(obj)
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data)
+      if(data.errors){
+        setErrors(data.errors)
+      } else {
+        setSpellData([...spellData,data])
+      }
+    })
+}
 
   const spellCards = spellData.map((spell)=>
   
@@ -52,7 +70,7 @@ function Spells() {
     <div>
         <h2>All Spells Listed Below:</h2>
         {spellCards}
-        <SpellsForm spellData={spellData} setSpellData={setSpellData}/>
+        <SpellsForm handlePost={handlePost} spellData={spellData} setSpellData={setSpellData}/>
 
     </div>
   )

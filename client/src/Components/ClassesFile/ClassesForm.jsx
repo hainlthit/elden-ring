@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function ClassesForm(classData, setClassData) {
+function ClassesForm({handlePost}) {
 
    const [name, setName] = useState("")
    const [image, setImage] = useState('')
@@ -39,18 +39,12 @@ function ClassesForm(classData, setClassData) {
            info: info,
            weapons: weapons
         }
-
-        console.log(newClassObj)
-
          fetch('/er_classes', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body:JSON.stringify(newClassObj),
             })
-         
-            .then(res => res.json())
-            .then(data => {console.log(data)
-            })
+            handlePost(newClassObj)
         
     }
    return (
