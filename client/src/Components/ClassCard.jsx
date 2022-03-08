@@ -1,45 +1,49 @@
 import React, { useState } from 'react';
-import EditSpell from "./EditSpell";
+import EditClass from './ClassesFile/EditClass';
 
-export default function ClassCard({id, name, level, info, weapons, image}) {
+export default function ClassCard({classObj, id, handleUpdateClass, handleDeleteClass}) {
 
   const [isEditing, setIsEditing] = useState(false);
 
-  // function handleDelete(){
-  //   fetch(`http://localhost:3000/classes/${id}`, { 
-  //     method: 'DELETE',
-  //   })
-  //   .then((r) => r.json())
-  //   .then((deletedClass) => handleDeleteSpell(deletedClass))
-  // }
-  
+  function handleDelete(){
+    fetch(`http://localhost:3000/er_classes/${id}`, { 
+      method: 'DELETE',
+    })
+    .then((r) => r.json())
+    .then((deletedClass) => handleDeleteClass(deletedClass))
+  }
+
   return (
       <div className="spell-card">
-          {isEditing ? (
+        {isEditing ? (
 
-        <EditSpell
-          
-        />
-    
-      ) : (
+          <EditClass
+            setIsEditing={setIsEditing}
+            id={id}
+            handleUpdateClass={handleUpdateClass}
+            classObj={classObj}
+          />
+
+          ) : (
         <>
         <div className="delete-edit-buttons">
-        <button className="edit-btn" onClick={() => setIsEditing((isEditing) => !isEditing)}>
+        <button className="edit-btn" onClick={() => setIsEditing((isEditing) => !isEditing)} >
               <span role="img" aria-label="edit">
                 EDIT
               </span>
         </button>
-        {/* <button onClick={handleDelete} className="delete-event-btn">X</button> */}
+        <button onClick={handleDelete} className="delete-event-btn">X</button>
         <br/>
         <br/>
         </div>
-        <img alt={name} src={image}/>
-                    <h4>{name}</h4> 
-                    <p>Level: {level}</p> 
-                    <p>Info: {info}</p> 
-                    <p>Weapons: {weapons}</p> 
+        <img alt={classObj.name} src={classObj.image}/>
+                    <h4>{classObj.name}</h4> 
+                    <p>Level: {classObj.level}</p> 
+                    <p>Info: {classObj.info}</p> 
+                    <p>Weapons: {classObj.weapons}</p> 
                     </>
     )}
     </div>
   )
 }
+

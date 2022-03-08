@@ -3,7 +3,6 @@ import SpellCard from './SpellCard';
 import {useEffect, useState} from "react";
 import SpellsForm from "./SpellsForm";
 
-
 function Spells() {
   const [spellData, setSpellData] = useState([''])
 
@@ -54,7 +53,7 @@ function Spells() {
         <h2>All Spells Listed Below:</h2>
         {spellCards}
         <SpellsForm spellData={spellData} setSpellData={setSpellData}/>
-        
+
     </div>
   )
 }

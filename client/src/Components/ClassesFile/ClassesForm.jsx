@@ -1,128 +1,127 @@
 import React, { useState } from 'react';
 
-function ClassesForm(spellData, setSpellData) {
+function ClassesForm(classData, setClassData) {
 
-   const [classform, setClassform] = useState("");
-   const [spelltype, setSpelltype] = useState("")
+   const [name, setName] = useState("")
    const [image, setImage] = useState('')
-   const [effect, setEffect] = useState("")
-   const [fp, setFp] = useState("")
+   const [info, setInfo] = useState("")
+   const [weapons, setWeapons] = useState("")
+   const [level, setLevel] = useState("")
    
-    function handleSetSpellname(e) {
-        setSpellname(e.target.value)
+   
+    function handleSetName(e) {
+        setName(e.target.value)
     }
-
-    let spelltypedata = [ 
-        { label: "Incantation", value: "Incantation"},
-        { label: "Sorcery", value: "Sorcery"}
-    ]
-
-    const spelltypeOptions = spelltypedata.map((spelltypedata) => 
-    <option  key={spelltypedata.label} value={spelltypedata.value}>{spelltypedata.label}</option>
-    )
-
-    function handleSetSpelltype(e) {
-        setSpelltype(e.target.value)
+   
+    function handleSetLevel(e) {
+        setLevel(e.target.value)
     }
 
     function handleSetImage(e) {
         setImage(e.target.value)
     }
     
-    function handleSetEffect(e) {
-        setEffect(e.target.value)
+    function handleSetInfo(e) {
+        setInfo(e.target.value)
     }
 
-    function handleSetFp(e) {
-        setFp(e.target.value)
+    function handleSetWeapons(e) {
+        setWeapons(e.target.value)
     }
     
     function handleSubmit(e){
         e.preventDefault();
         
-        const newSpellObj = {
-           spellname: spellname,
-           spelltype: spelltype,
+        const newClassObj = {
+           name: name,
+           level: level,
             image: image,
-           effect: effect,
-           fp: fp
+           info: info,
+           weapons: weapons
         }
 
-        console.log(newSpellObj)
+        console.log(newClassObj)
 
-         fetch('/spells', {
+         fetch('/er_classes', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
-            body:JSON.stringify(newSpellObj),
+            body:JSON.stringify(newClassObj),
             })
          
             .then(res => res.json())
             .then(data => {console.log(data)
-                // setSpellData([...spellData, data])
             })
         
     }
    return (
-    <>
+    <div className="class-form">
     <br/>
-    <h2>Add a new Spell!</h2>
-    <br/>
+    <h2>Add a new class!</h2>
     <form onSubmit={handleSubmit} className="form">
-    <label className="input-label">Spell Type: </label>
-    <br/>
-        <select  onChange={handleSetSpelltype}>
-            {spelltypeOptions}
-        </select>
-        <br/>
-        <br/>
-        <label>Spell Name:</label>
+        <label>Name: </label>
         <input 
-        name="Spell Name"
+        name="Class Name"
         type="string"
-        placeholder="Name of the spell..."
-        value={spellname}
-        onChange={handleSetSpellname}
+        placeholder="Name of the class..."
+        value={name}
+        onChange={handleSetName}
         className="form-input"
         ></input>
         <br/>
+    
         <br/>
-        <label>Image:</label>
+        <label>Level: </label>
         <input 
-        name="Spell Icon"
+        name="Class Level"
+        type="integer"
+        placeholder="1"
+        value={level}
+        onChange={handleSetLevel}
+        className="form-input"
+        ></input>
+        <br/>
+
+        <br/>
+        <label>Image Link: </label>
+        <input 
+        name="class Icon"
         type="string"
-        placeholder="Link for spell image..."
+        placeholder="Link for class image..."
         value={image}
         onChange={handleSetImage}
         className="form-input"
         ></input>
         <br/>
+
         <br/>
-        <label>Spell Effect:</label>
+        <label>Information: </label>
         <input 
-        name="effect"
+        name="info"
         type="string"
-        placeholder="Spell goes boom!..."
-        value={effect}
-        onChange={handleSetEffect}
+        placeholder="class goes boom..."
+        value={info}
+        onChange={handleSetInfo}
         className="form-input"
         ></input>
         <br/>
+
         <br/>
-        <label>FP :</label>
+        <label>Weapons: </label>
         <input 
-        name="fp"
+        name="weapons"
         type="integer"
-        placeholder="FP..."
-        value={fp}
-        onChange={handleSetFp}
+        placeholder="weapons..."
+        value={weapons}
+        onChange={handleSetWeapons}
         className="form-input"
         ></input>
         <br/>
+
         <br/>
-        <button className="form-input" type="submit">Add New Spell</button> 
+        <button className="form-input" type="submit">Add New class</button> 
     </form>
         
-    </>
+    </div>
 
    )
 }

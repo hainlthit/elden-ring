@@ -1,9 +1,6 @@
 import React, { useState } from 'react'
 
 export default function EditSpell({id, spellname, spelltype, image, effect, fp, setIsEditing, handleUpdateSpell}) {
-   
-
-
     const [updatedSpellname, setUpdatedSpellname] = useState(spellname);
     const [updatedSpelltype, setUpdatedSpelltype] = useState(spelltype);
     const [updatedImage, setUpdatedImage] = useState(image);

@@ -1,14 +1,9 @@
 import React, { useState } from 'react';
 import EditSpell from "./EditSpell";
 
-
 export default function SpellCard({ id, spellname, spelltype, image, effect, fp, handleUpdateSpell, handleDeleteSpell}) {
 
   const [isEditing, setIsEditing] = useState(false);
-
-//   const refreshPage = ()=>{
-//     window.location.reload();
-//  }
 
   function handleDelete(){
     fetch(`http://localhost:3000/spells/${id}`, { 
@@ -16,10 +11,8 @@ export default function SpellCard({ id, spellname, spelltype, image, effect, fp,
     })
     .then((r) => r.json())
     .then((deletedSpell) => handleDeleteSpell(deletedSpell))
-    // .then(refreshPage)
   }
 
-  
   return (
       <div className="spell-card">
           {isEditing ? (
