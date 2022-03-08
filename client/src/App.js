@@ -10,7 +10,7 @@ import Login from "../src/Components/Login.jsx"
 
 //pages
 import Spells from './Components/Spells';
-import Classes from './Pages/Classes';
+import Classes from './Components/Classes';
 
 
 function App() {

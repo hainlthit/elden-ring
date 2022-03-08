@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-function SpellsForm(spellData, setSpellData) {
+function ClassesForm(spellData, setSpellData) {
 
-   const [spellname, setSpellname] = useState("");
+   const [classform, setClassform] = useState("");
    const [spelltype, setSpelltype] = useState("")
    const [image, setImage] = useState('')
    const [effect, setEffect] = useState("")
@@ -127,4 +127,4 @@ function SpellsForm(spellData, setSpellData) {
    )
 }
 
-export default SpellsForm;
+export default ClassesForm;
