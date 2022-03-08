@@ -1,6 +1,7 @@
 import React from 'react'
 import SkillCard from './SkillCard'
 import {useEffect, useState} from "react";
+import SkillForm from './SkillForm';
 
 export default function Skills() {
     const [skillData, setSkillData] = useState([''])
@@ -46,7 +47,7 @@ export default function Skills() {
     <div>
         <h2>All Skills Listed Below:</h2>
         {skillCards}
-        {/* <SkillCard skillData={skillData} setSkillData={setSkillData}/> */}
+        <SkillForm skillData={skillData} setSkillData={setSkillData}/>
     </div>
   )
 }

@@ -38,8 +38,9 @@ export default function SkillCard({skillObj, id, handleUpdateSkill}) {
         </div>
         <img alt={skillObj.skill_name} src={skillObj.image}/>
                     <h4>{skillObj.skill_name}</h4> 
-                    <p>Equipment: {skillObj.equipment}</p> 
+                    <p>Type: {skillObj.skill_type}</p> 
                     <p>Fp: {skillObj.fp}</p> 
+                    <p>Required Equipment: {skillObj.equipment}</p> 
                     <p>Effect: {skillObj.effect}</p> 
                     </>
      )} 
