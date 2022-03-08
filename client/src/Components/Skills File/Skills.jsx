@@ -5,8 +5,7 @@ import SkillForm from './SkillForm';
 
 export default function Skills() {
     const [skillData, setSkillData] = useState([''])
-    const [errors, setErrors] = useState(false)
-
+  
     useEffect(() => {
     fetch('http://localhost:3000/skills')
       .then(r => r.json())
@@ -44,12 +43,9 @@ export default function Skills() {
     .then(res => res.json())
     .then(data => {
       console.log(data)
-      if(data.errors){
-        setErrors(data.errors)
-      } else {
         setSkillData([...skillData,data])
       }
-    })
+    )
 }
 
   const skillCards = skillData.map((skills)=> 

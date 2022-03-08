@@ -5,7 +5,7 @@ import ClassesForm from './ClassesFile/ClassesForm';
 
 function Classes() {
   const [classData, setClassData] = useState([''])
-  const [errors, setErrors] = useState(false)
+
 
   useEffect(() => {
     fetch('http://localhost:3000/er_classes')
@@ -44,12 +44,9 @@ function Classes() {
     .then(res => res.json())
     .then(data => {
       console.log(data)
-      if(data.errors){
-        setErrors(data.errors)
-      } else {
         setClassData([...classData,data])
       }
-    })
+    )
 }
 
   const classCards = classData.map((er_class)=> 

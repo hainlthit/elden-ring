@@ -5,7 +5,7 @@ import SpellsForm from "./SpellsForm";
 
 function Spells() {
   const [spellData, setSpellData] = useState([''])
-  const [errors, setErrors] = useState(false)
+ 
 
   useEffect(() => {
     fetch('http://localhost:3000/spells')
@@ -44,12 +44,9 @@ function Spells() {
     .then(res => res.json())
     .then(data => {
       console.log(data)
-      if(data.errors){
-        setErrors(data.errors)
-      } else {
         setSpellData([...spellData,data])
       }
-    })
+    )
 }
 
   const spellCards = spellData.map((spell)=>
