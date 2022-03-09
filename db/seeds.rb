@@ -29,14 +29,14 @@ ErClass.create(
     level: 7,
     info: "Vigor 14, Dexterity 9, Intelligence 7, Mind 9, Endurance 12, Faith 8, Strength 16, Arcane 11,",
     weapons: "Leather Shield, Battle Axe",
-    image: "https://eldenring.wiki.fextralife.com/file/Elden-Ring/hero_class_elden_ring_wiki_guide_200px.png",
+    image: "https://eldenring.wiki.fextralife.com/file/Elden-Ring/hero_class_elden_ring_wiki_guide_200px.png"
 )
 ErClass.create(
     name: "Bandit",
     level: 5,
     info: "Vigor 10, Dexterity 13, Intelligence 9, Mind 11, Endurance 10, Faith 8, Strength 9, Arcane 14,",
     weapons: "Great Knife, Shortbow, Buckler Shields, Sleepbone Arrows",
-    image: "https://eldenring.wiki.fextralife.com/file/Elden-Ring/bandit_class_elden_ring_wiki_guide_200px.png",
+    image: "https://eldenring.wiki.fextralife.com/file/Elden-Ring/bandit_class_elden_ring_wiki_guide_200px.png"
 )
 
 #skills
@@ -46,7 +46,7 @@ Skill.create(
     equipment: "Buckler",
     fp: "none",
     effect: "This skill allows you to parry with your shield on your right hand, and performs it a lot faster than a regular parry.",
-    image: "https://eldenring.wiki.fextralife.com/file/Elden-Ring/buckler-parry-skill-elden-ring-wiki-guide.jpg",
+    image: "https://eldenring.wiki.fextralife.com/file/Elden-Ring/buckler-parry-skill-elden-ring-wiki-guide.jpg"
 )
 
 Skill.create(
@@ -55,58 +55,58 @@ Skill.create(
     equipment: "Longsword",
     fp: "8/12",
     effect: "Slash up through enemy guards with a normal attack, or run and thrust with a strong attack.",
-    image: "https://eldenring.wiki.fextralife.com/file/Elden-Ring/square-off-skill-elden-ring-wiki-guide.jpg",
+    image: "https://eldenring.wiki.fextralife.com/file/Elden-Ring/square-off-skill-elden-ring-wiki-guide.jpg"
 )
 
 # comments
 Comment.create(
     message: "yo this game is crazy!",
-    user_id: 1,
+    user_id: 1
 )
 Comment.create(
     message: "so gnarly XD",
-    user_id: 2,
+    user_id: 2
 )
 Comment.create(
     message: "so gnarly XD",
-    user_id: 2,
+    user_id: 2
 )
 Comment.create(
     message: "WoW!!!",
-    user_id: 3,
+    user_id: 3
 )
 Comment.create(
     message: "amazing, like seriously amazing!",
-    user_id: 3,
+    user_id: 3
 )
 Comment.create(
     message: "idk... it's too hard to play for me.",
-    user_id: 4,
+    user_id: 4
 )
 
 # profiles
 Profile.create(
     username: "1234",
     color1: "#34ebbd",
-    color2: "#7434eb",
+    color2: "#7434eb"
 )
 
 Profile.create(
     username: "ilolo",
     color1: "#309421",
-    color2: "#d44654",
+    color2: "#d44654"
 )
 
 Profile.create(
     username: "hain",
     color1: "#eb3483",
-    color2: "##38260a",
+    color2: "##38260a"
 )
 
 Profile.create(
     username: "test",
     color1: "#34c3eb",
-    color2: "#eba434",
+    color2: "#eba434"
 )
 
 # users
@@ -114,26 +114,26 @@ User.create(
     username: "1234",
     is_admin: false,
     profile_id: 1,
-    password: "1234",
+    password: "1234"
 )
 
 User.create(
     username: "ilolo",
     is_admin: true,
     profile_id: 2,
-    password: "1234",
+    password: "1234"
 )
 
 User.create(
     username: "hain",
     is_admin: true,
     profile_id: 3,
-    password: "1234",
+    password: "1234"
 )
 
 User.create(
     username: "test",
     is_admin: false,
     profile_id: 4,
-    password: "1234",
+    password: "1234"
 )

@@ -10,7 +10,7 @@ export default function Skills() {
     fetch('http://localhost:3000/skills')
       .then(r => r.json())
       .then(data => setSkillData(data))
-  }, [skillData])
+  }, [])
 
   function handleUpdateSkill(updatedSkill) {
     const editedSkill = skillData.map((skill) => {
