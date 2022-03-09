@@ -11,8 +11,9 @@ import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Slide from '@mui/material/Slide';
 import { Button } from '@mui/material';
 
-export default function TemporaryDrawer(setIsAuthenticated, isAuthenticated, user, setUser){
+export default function TemporaryDrawer({setIsAuthenticated, isAuthenticated, user, setUser}){
 const [isClicked, setIsClicked] = useState(false)
+console.log(user)
 
 function myFunction() {
   let element = document.body;

@@ -14,6 +14,7 @@ const [messageData, setMessageData] = useState([''])
       .then(data => setMessageData(data))
   }, []) 
 
+console.log(messageData)
   // const words = messageData[0].comments[0].message
 
   return (

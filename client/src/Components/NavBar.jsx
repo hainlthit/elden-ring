@@ -3,7 +3,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 
 function NavBar({isAuthenticated, setIsAuthenticated, user, setUser}) {
-
+    console.log(user)
     function logout() {
         fetch('/logout',{
             method:'DELETE'
@@ -17,6 +17,11 @@ function NavBar({isAuthenticated, setIsAuthenticated, user, setUser}) {
   return (
     <div id="div_top_hypers">
         <ul id="ul_top_hypers">
+             <li>
+                <NavLink className="li-nav" to="/" exact>
+                    Home
+                </NavLink>
+            </li>
             <li>
                 <NavLink className="li-nav" to="/sign-up" exact>
                     Sign-Up
@@ -28,18 +33,13 @@ function NavBar({isAuthenticated, setIsAuthenticated, user, setUser}) {
                     Login
                 </NavLink>} 
             </li>
-            <li>
-                <NavLink className="li-nav" to="/" exact>
-                    Back to Home
-                </NavLink>
-            </li>
+           
             {isAuthenticated?             
             <li>
                 <NavLink className="li-nav" to="/spells" exact>
                     Spells
                 </NavLink>
-            </li>:
-            <p> </p>}
+            </li>: <p> </p>}
             {isAuthenticated?             
             <li>
                 <NavLink className="li-nav" to="/classes" exact>

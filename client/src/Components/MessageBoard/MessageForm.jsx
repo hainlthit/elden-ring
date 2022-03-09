@@ -50,7 +50,6 @@ export default function MessageForm(user, setUser) {
             <br/>
         </form>
         
-
     </div>
   )
 }

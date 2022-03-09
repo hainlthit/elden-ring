@@ -4,7 +4,8 @@ import {useEffect, useState} from "react";
 import ClassesForm from './ClassesFile/ClassesForm';
 
 function Classes() {
-  const [classData, setClassData] = useState([''])
+  const [classData, setClassData] = useState([])
+  console.log(classData)
 
   useEffect(() => {
     fetch('http://localhost:3000/er_classes')

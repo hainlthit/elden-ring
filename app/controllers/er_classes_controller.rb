@@ -1,4 +1,6 @@
 class ErClassesController < ApplicationController
+    skip_before_action :authorized_user, only: [:index, :show]
+
     def index
         er_class = ErClass.all
         render json: er_class, status: :ok

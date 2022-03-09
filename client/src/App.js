@@ -22,19 +22,21 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
 
-  // useEffect(() => {
-  //   fetch("/authorized_user")
-  //   .then((res) => {
-  //     if (res.ok) {
-  //       res.json()
-  //       .then((user) => {
-  //         setIsAuthenticated(true);
-  //         setUser(user);
-  //       });
-  //     }
-  //   });
-  // })
+  useEffect(() => {
+    fetch("/authorized_user")
+    .then((res) => {
+      if (res.ok) {
+        res.json()
+        .then((user) => {
+          setIsAuthenticated(true);
+          setUser(user);
+        });
+      }
+    });
+  })
 
+  console.log(isAuthenticated)
+  
   return (
     <div className='App' >
         {/* <div className='sidebar'>   */}
@@ -53,6 +55,10 @@ function App() {
             <MainContainer user={user} setUser={setUser}/>
            </div>
         </div>
+        <footer className="footer">
+        {/* <button className="dark-mode-btn" onClick={myFunction}>{isClicked ? "☾" : "☼"}</button><br/> */}
+            <p>©2022 Hain & Ilolo</p>
+        </footer>
     </div>
   )
   
