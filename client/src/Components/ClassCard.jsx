@@ -14,7 +14,7 @@ export default function ClassCard({classObj, id, handleUpdateClass, handleDelete
   }
 
   return (
-      <div className="spell-card">
+      <div className="card">
         {isEditing ? (
 
           <EditClass
@@ -25,7 +25,12 @@ export default function ClassCard({classObj, id, handleUpdateClass, handleDelete
           />
 
           ) : (
-        <>
+        <div className='card-content'>
+        <img alt={classObj.name} src={classObj.image}/>
+                    <h4>{classObj.name}</h4> 
+                    <p>Level: {classObj.level}</p> 
+                    <p>Info: {classObj.info}</p> 
+                    <p>Weapons: {classObj.weapons}</p> 
         <div className="delete-edit-buttons">
         <button className="edit-btn" onClick={() => setIsEditing((isEditing) => !isEditing)} >
               <span role="img" aria-label="edit">
@@ -36,12 +41,7 @@ export default function ClassCard({classObj, id, handleUpdateClass, handleDelete
         <br/>
         <br/>
         </div>
-        <img alt={classObj.name} src={classObj.image}/>
-                    <h4>{classObj.name}</h4> 
-                    <p>Level: {classObj.level}</p> 
-                    <p>Info: {classObj.info}</p> 
-                    <p>Weapons: {classObj.weapons}</p> 
-                    </>
+                    </div>
     )}
     </div>
   )

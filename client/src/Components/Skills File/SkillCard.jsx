@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState} from "react";
 import EditSkill from './EditSkill';
+import Button from '@mui/material/Button';
 
 export default function SkillCard({skillObj, id, handleUpdateSkill, handleDeleteSkill}) {
     const [isEditing, setIsEditing] = useState(false);
@@ -14,7 +15,8 @@ export default function SkillCard({skillObj, id, handleUpdateSkill, handleDelete
       }
 
   return (
-    <div className="skill-card">
+    
+    <div className="card">
         {isEditing ? (
           <EditSkill
             setIsEditing={setIsEditing}
@@ -24,26 +26,29 @@ export default function SkillCard({skillObj, id, handleUpdateSkill, handleDelete
           />
 
           ) : (
-        <>
-        <div className="delete-edit-buttons">
-        <button className="edit-btn" onClick={() => setIsEditing((isEditing) => !isEditing)} >
-              <span role="img" aria-label="edit">
-                EDIT
-              </span>
-        </button>
-        <button onClick={handleDelete} className="delete-event-btn">X</button>
+        <div className="card-content">
+          <div className="delete-edit-buttons">
+            <img alt={skillObj.skill_name} src={skillObj.image}/>
+                <h4>{skillObj.skill_name}</h4> 
+                <p>Type: {skillObj.skill_type}</p> 
+                <p>Fp: {skillObj.fp}</p> 
+                <p>Required Equipment: {skillObj.equipment}</p> 
+                <p>Effect: {skillObj.effect}</p> 
+                <Button variant="outlined"className="edit-btn" onClick={() => setIsEditing((isEditing) => !isEditing)} >
+                  <span role="img" aria-label="edit">
+                    EDIT
+                  </span>
+                </Button>
+                <Button variant="outlined" onClick={handleDelete} className="delete-event-btn">X</Button>
+           
+          </div>
+
         <br/>
         <br/>
         </div>
-        <img alt={skillObj.skill_name} src={skillObj.image}/>
-                    <h4>{skillObj.skill_name}</h4> 
-                    <p>Type: {skillObj.skill_type}</p> 
-                    <p>Fp: {skillObj.fp}</p> 
-                    <p>Required Equipment: {skillObj.equipment}</p> 
-                    <p>Effect: {skillObj.effect}</p> 
-                    </>
      )} 
-    </div>
+     </div>
+     
   )
 }
 

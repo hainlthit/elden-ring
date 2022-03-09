@@ -15,41 +15,41 @@ function NavBar({isAuthenticated, setIsAuthenticated, user, setUser}) {
     }
 
   return (
-    <div>
-        <ul>
+    <div id="div_top_hypers">
+        <ul id="ul_top_hypers">
             <li>
-                <NavLink to="/sign-up" exact>
+                <NavLink className="li-nav" to="/sign-up" exact>
                     Sign-Up
                 </NavLink>
             </li>
             <li>
                {user? <li onClick={logout}> Logout </li> : 
-               <NavLink to="/login" exact>
+               <NavLink className="li-nav" to="/login" exact>
                     Login
                 </NavLink>} 
             </li>
             <li>
-                <NavLink to="/" exact>
+                <NavLink className="li-nav" to="/" exact>
                     Back to Home
                 </NavLink>
             </li>
             {isAuthenticated?             
             <li>
-                <NavLink to="/spells" exact>
+                <NavLink className="li-nav" to="/spells" exact>
                     Spells
                 </NavLink>
             </li>:
             <p> </p>}
             {isAuthenticated?             
             <li>
-                <NavLink to="/classes" exact>
+                <NavLink className="li-nav" to="/classes" exact>
                     Classes
                 </NavLink>
             </li>:
             <p> </p>}
             {isAuthenticated?             
             <li>
-                <NavLink to="/skills" exact>
+                <NavLink className="li-nav" to="/skills" exact>
                     Skills
                 </NavLink>
             </li>:

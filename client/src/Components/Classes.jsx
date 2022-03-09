@@ -60,7 +60,7 @@ function Classes() {
   return (
     <div>
         <h2>All Classes Listed Below:</h2>
-        {classCards}
+        <div className='card-holder'>{classCards}</div>
         <ClassesForm handlePost={handlePost} classData={classData} setClassData={setClassData}/>
     </div>
   )

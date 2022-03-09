@@ -3,17 +3,23 @@ import EditSpell from "./EditSpell";
 import Card from '@mui/material/Card';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
 
 export default function SpellCard({ id, spellname, spelltype, image, effect, fp, handleUpdateSpell, handleDeleteSpell}) {
 
   const [isEditing, setIsEditing] = useState(false);
 
+  const refreshPage = ()=>{
+    window.location.reload();
+ }
+ 
   function handleDelete(){
     fetch(`http://localhost:3000/spells/${id}`, { 
       method: 'DELETE',
     })
     .then((r) => r.json())
     .then((deletedSpell) => handleDeleteSpell(deletedSpell))
+    .then(refreshPage)
   }
 
   return (
@@ -32,29 +38,33 @@ export default function SpellCard({ id, spellname, spelltype, image, effect, fp,
         />
     
       ) : (
+              <div className="card">
    <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
         <Grid item xs={6} md={8}>
             <Card variant="outlined" sx={{ minWidth: 100 }}>
-            <div className="delete-edit-buttons">
-            <button className="edit-btn" onClick={() => setIsEditing((isEditing) => !isEditing)}>
-                  <span role="img" aria-label="edit">
-                    EDIT
-                  </span>
-            </button>
-            <button onClick={handleDelete} className="delete-event-btn">X</button>
-            <br/>
-            <br/>
-            </div>
+              <div className="card-content">
             <img alt={spellname} src={image}/>
                         <h4>{spellname}</h4> 
                         <p>Spell Type: {spelltype}</p> 
                         <p>FP: {fp}</p> 
                         <p>Effect: {effect}</p> 
+            <div className="delete-edit-buttons">
+            <Button variant="outlined" className="edit-btn" onClick={() => setIsEditing((isEditing) => !isEditing)}>
+                  <span role="img" aria-label="edit">
+                    EDIT
+                  </span>
+            </Button>
+            <Button variant="outlined" onClick={handleDelete} className="delete-event-btn">X</Button>
+            <br/>
+            <br/>
+            </div>
+            </div>
                         </Card>
                         </Grid>
                         </Grid>
                         </Box>
+            </div>
 
     )}
     </div>

@@ -68,7 +68,7 @@ function Spells() {
     // <Container maxWidth="sm">
       <div>
         <h2>All Spells Listed Below:</h2>
-        {spellCards}
+        <div className='card-holder'>{spellCards}</div>
         <SpellsForm handlePost={handlePost} spellData={spellData} setSpellData={setSpellData}/>
       </div>
     // </Container>

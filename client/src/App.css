@@ -1,44 +1,112 @@
 .App {
   text-align: center;
+  align-content: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* NAVBAR */
+/* 
+.sidebar {
+  width: 16%;
+  height: 100vh;
+  position: fixed;
+  z-index: 11;
+  transform-origin: left;
+} */
+.li-nav {
+  text-decoration: none;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.li-nav:hover {
+  text-decoration: none;
+  color: #ef8b09;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.sidebar {
+  background-color: #ef8b09;
 }
 
-/* CSS STARTS HERE */
+.main-content {
+  color: #ef8b09;
+  background-color: #181818;
+  /* background-image: url("https://preview.redd.it/e8u661wb0gx71.png?auto=webp&s=b1a7452aa81e8d5b4a729be62a852b9ecfcdc4e6"); */
+  min-height: 100vh;
+  background-size: 3400px;
+  background-position: center;
+  display: grid;
+  position: relative;
+}
 
-.messages-container {
-  border: 1px red;
+.content {
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+
+.nav {
+  background-color: red;
+}
+
+/* 
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+  align-items: center;
+.profile {
+  width: 100%;
+  text-align: center;
+}
+
+.profile img {
+  width: 100%;
+  text-align: center;
+  width: 90%;
+  border-radius: 0;
+} */
+
+#div_top_hypers {
+  background-color: #eeeeee;
+  display: inline;
+}
+#ul_top_hypers li {
+  display: inline;
+  padding: 20px;
+  text-decoration: none;
+}
+
+li {
+  text-decoration: none;
+}
+
+/* cards */
+
+.card:hover {
+  background-color: #ef8b09;
+  box-shadow: none;
+  color: #161925 !important;
+  transform: translate(4px, 3px);
+}
+
+.card-content {
+  overflow: hidden;
+  padding-bottom: 0.2rem;
+  text-align: center;
+  margin: 20px;
+}
+
+.card {
+  background-color: #31333a;
+  width: 100%;
+  padding: 1rem;
+  overflow: hidden;
+  box-shadow: inset 5em 1em #141517;
+  transition: 0.3s;
+  padding: 20px;
+}
+
+.card-holder {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2.5rem;
 }

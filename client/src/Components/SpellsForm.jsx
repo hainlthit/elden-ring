@@ -73,6 +73,7 @@ function SpellsForm({handlePost}) {
         className="form-input"
         ></input>
         <br/>
+       
         <br/>
         <label>Image:</label>
         <input 
@@ -84,6 +85,7 @@ function SpellsForm({handlePost}) {
         className="form-input"
         ></input>
         <br/>
+       
         <br/>
         <label>Spell Effect:</label>
         <input 

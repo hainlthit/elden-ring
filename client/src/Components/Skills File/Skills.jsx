@@ -50,7 +50,9 @@ export default function Skills() {
   return (
     <div>
         <h2>All Skills Listed Below:</h2>
+        <div className="card-holder">
         {skillCards}
+          </div>
         <SkillForm skillData={skillData} setSkillData={setSkillData}/>
     </div>
   )

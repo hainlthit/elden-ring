@@ -35,7 +35,8 @@ function Login({setIsAuthenticated, setUser}) {
       })
     }
     return (
-        <> 
+      <div>
+        {/*  <div className='card'>  */}
         <form onSubmit={onSubmit}>
           <TextField label="Username" type="text" value={username} variant="outlined" onChange={(e) => setUsername(e.target.value)} />
         <br/><br/>
@@ -44,7 +45,7 @@ function Login({setIsAuthenticated, setUser}) {
         <br/><Button variant="contained" type="submit" value="Login!" >Submit</Button>
       </form>
       {/* {errors?errors.map(e => <div>{e}</div>):null} */}
-        </>
+    </div>
     )
 }
 

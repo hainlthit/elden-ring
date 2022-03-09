@@ -25,7 +25,7 @@ class SpellsController < ApplicationController
     def destroy
         spell = Spell.find(params[:id])
         spell.destroy
-        head :no_content 
+        render json: {} 
     end 
 
     private
