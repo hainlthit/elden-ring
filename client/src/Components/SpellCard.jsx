@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import EditSpell from "./EditSpell";
+import Card from '@mui/material/Card';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
 
 export default function SpellCard({ id, spellname, spelltype, image, effect, fp, handleUpdateSpell, handleDeleteSpell}) {
 
@@ -29,23 +32,30 @@ export default function SpellCard({ id, spellname, spelltype, image, effect, fp,
         />
     
       ) : (
-        <>
-        <div className="delete-edit-buttons">
-        <button className="edit-btn" onClick={() => setIsEditing((isEditing) => !isEditing)}>
-              <span role="img" aria-label="edit">
-                EDIT
-              </span>
-        </button>
-        <button onClick={handleDelete} className="delete-event-btn">X</button>
-        <br/>
-        <br/>
-        </div>
-        <img alt={spellname} src={image}/>
-                    <h4>{spellname}</h4> 
-                    <p>Spell Type: {spelltype}</p> 
-                    <p>FP: {fp}</p> 
-                    <p>Effect: {effect}</p> 
-                    </>
+   <Box sx={{ flexGrow: 1 }}>
+      <Grid container spacing={2}>
+        <Grid item xs={6} md={8}>
+            <Card variant="outlined" sx={{ minWidth: 100 }}>
+            <div className="delete-edit-buttons">
+            <button className="edit-btn" onClick={() => setIsEditing((isEditing) => !isEditing)}>
+                  <span role="img" aria-label="edit">
+                    EDIT
+                  </span>
+            </button>
+            <button onClick={handleDelete} className="delete-event-btn">X</button>
+            <br/>
+            <br/>
+            </div>
+            <img alt={spellname} src={image}/>
+                        <h4>{spellname}</h4> 
+                        <p>Spell Type: {spelltype}</p> 
+                        <p>FP: {fp}</p> 
+                        <p>Effect: {effect}</p> 
+                        </Card>
+                        </Grid>
+                        </Grid>
+                        </Box>
+
     )}
     </div>
   )

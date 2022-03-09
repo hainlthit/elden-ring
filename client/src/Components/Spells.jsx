@@ -2,6 +2,7 @@ import React from 'react'
 import SpellCard from './SpellCard';
 import {useEffect, useState} from "react";
 import SpellsForm from "./SpellsForm";
+import Container from '@mui/material/Container';
 
 function Spells() {
   const [spellData, setSpellData] = useState([''])
@@ -64,12 +65,13 @@ function Spells() {
   /> )
   
   return (
-    <div>
+    // <Container maxWidth="sm">
+      <div>
         <h2>All Spells Listed Below:</h2>
         {spellCards}
         <SpellsForm handlePost={handlePost} spellData={spellData} setSpellData={setSpellData}/>
-
-    </div>
+      </div>
+    // </Container>
   )
 }
 

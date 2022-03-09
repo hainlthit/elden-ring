@@ -9,6 +9,7 @@ import LoginAd from './Components/LoginAd';
 import Auth from "../src/Components/Auth.jsx"
 import Login from "../src/Components/Login.jsx"
 import MainContainer from './Components/MainContainer';
+import TemporaryDrawer from "../src/Components/TemporaryDrawer.jsx"
 
 //pages
 import Spells from './Components/Spells';
@@ -40,7 +41,7 @@ function App() {
         <h1>
        Elden Ring Wiki App
         </h1>
-        
+        {/* <TemporaryDrawer/> */}
         <Routes>
             <Route exact path="/sign-up" element={<Auth/>} /> 
             <Route exact path="/classes" element={<Classes/>} /> 

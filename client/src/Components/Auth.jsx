@@ -33,13 +33,13 @@ function Auth() {
    
           <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
         </label>
-        <label>
+        <br/> <label>
          Password
     
         <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
         </label>
        
-        <input type="submit" value="Sign up!" />
+        <br/> <input type="submit" value="Sign up!" />
       </form>
       {/* {errors?errors.map(e => <div>{e[0]+': ' + e[1]}</div>):null} */}
         </>

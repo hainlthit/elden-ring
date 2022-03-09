@@ -1,4 +1,6 @@
 import React, {useState} from 'react'
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 
 function Login({setIsAuthenticated, setUser}) {
     const [username, setUsername] = useState('')
@@ -35,18 +37,11 @@ function Login({setIsAuthenticated, setUser}) {
     return (
         <> 
         <form onSubmit={onSubmit}>
-        <label>
-          Username
-   
-          <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
-        </label>
-        <label>
-         Password
-    
-        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-        </label>
-       
-        <input type="submit" value="Login!" />
+          <TextField label="Username" type="text" value={username} variant="outlined" onChange={(e) => setUsername(e.target.value)} />
+        <br/><br/>
+        <TextField label="Password" type="password" value={password} variant="outlined" onChange={(e) => setPassword(e.target.value)} />
+        <br/>
+        <br/><Button variant="contained" type="submit" value="Login!" >Submit</Button>
       </form>
       {/* {errors?errors.map(e => <div>{e}</div>):null} */}
         </>
