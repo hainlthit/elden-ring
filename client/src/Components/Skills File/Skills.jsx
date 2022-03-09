@@ -4,7 +4,7 @@ import {useEffect, useState} from "react";
 import SkillForm from './SkillForm';
 
 export default function Skills() {
-    const [skillData, setSkillData] = useState([''])
+    const [skillData, setSkillData] = useState([])
 
     useEffect(() => {
     fetch('http://localhost:3000/skills')

@@ -3,7 +3,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 
 function NavBar({isAuthenticated, setIsAuthenticated, user, setUser}) {
-    console.log(user)
+   
     function logout() {
         fetch('/logout',{
             method:'DELETE'
@@ -54,6 +54,7 @@ function NavBar({isAuthenticated, setIsAuthenticated, user, setUser}) {
                 </NavLink>
             </li>:
             <p> </p>}
+            
         </ul>
     </div>
   )

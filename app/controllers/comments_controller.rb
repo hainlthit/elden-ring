@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+    skip_before_action :authorized_user, only: [:index, :create]
+
     def index
         render json: Comment.all, status: :ok
     end

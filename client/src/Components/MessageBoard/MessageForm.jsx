@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-export default function MessageForm(user, setUser) {
-    const [messageOnData, setMessageOnData] = useState("");
+export default function MessageForm({renderPost, user, setUser, messageOnData, setMessageOnData }) {
+    
 
     function handleSetMessageData(e) {
         setMessageOnData(e.target.value)
@@ -23,13 +23,7 @@ export default function MessageForm(user, setUser) {
 
     function handleSubmit(e){
         e.preventDefault();
-      
-        const newMessageObj = {
-           message: messageOnData,
-           current_user: 1,
-        //    user_id: current_user
-        }
-        handlePost(newMessageObj)
+        renderPost(messageOnData)
     }
 
     console.log(messageOnData)
@@ -37,16 +31,17 @@ export default function MessageForm(user, setUser) {
     <div>
         <br/>
         <form onSubmit={handleSubmit} className="form">
+          
             <input 
                 name="Text Message"
                 type="string"
                 placeholder="Send a Message"
                 value={messageOnData}
                 onChange={handleSetMessageData}
-                className="form-input"
+                className="message-form-input"
                 >
             </input>
-            <button className="form-input" type="submit">Send</button> 
+            <button className="message-btn-input" type="submit">Send</button> 
             <br/>
         </form>
         

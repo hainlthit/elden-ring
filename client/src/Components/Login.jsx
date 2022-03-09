@@ -2,9 +2,12 @@ import React, {useState} from 'react'
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 
+
 function Login({setIsAuthenticated, setUser}) {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
+
+    const [pass, setPass] = useState(false)
 
     const [errors, setErrors] = useState([])
 
@@ -34,10 +37,12 @@ function Login({setIsAuthenticated, setUser}) {
         }
       })
     }
+  
     return (
       <div>
         {/*  <div className='card'>  */}
         <form onSubmit={onSubmit}>
+          
           <TextField label="Username" type="text" value={username} variant="outlined" onChange={(e) => setUsername(e.target.value)} />
         <br/><br/>
         <TextField label="Password" type="password" value={password} variant="outlined" onChange={(e) => setPassword(e.target.value)} />
