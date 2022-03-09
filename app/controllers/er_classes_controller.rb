@@ -1,5 +1,5 @@
 class ErClassesController < ApplicationController
-    skip_before_action :authorized_user, only: [:index, :show]
+    skip_before_action :authorized_user, only: [:index, :show, :create, :update, :destroy]
 
     def index
         er_class = ErClass.all
@@ -25,7 +25,7 @@ class ErClassesController < ApplicationController
     def destroy
         er_class = ErClass.find(params[:id])
         er_class.destroy
-        head :no_content 
+        render json: {}
     end 
 
     private
