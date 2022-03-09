@@ -31,12 +31,22 @@ export default function Skills() {
         return null
       }
     });
-    handleAddSkill(updatedSkill);
+    setSkillData(updatedSkill);
   }
 // WORK IN PROGRESS
-  function handleAddSkill(addedSkill) {
-    setSkillData((skillData) => [...skillData, addedSkill])
-  }
+function handlePost(obj){
+  fetch('/skills',{
+    method:'POST',
+    headers: {'Content-Type': 'application/json'},
+    body:JSON.stringify(obj)
+  })
+  .then(res => res.json())
+  .then(data => {
+    console.log(data)
+      setSkillData([...skillData,data])
+    }
+  )
+}
 
   const skillCards = skillData.map((skills)=> 
   <SkillCard
@@ -53,7 +63,7 @@ export default function Skills() {
         <div className="card-holder">
         {skillCards}
           </div>
-        <SkillForm skillData={skillData} setSkillData={setSkillData}/>
+        <SkillForm handlePost={handlePost} skillData={skillData} setSkillData={setSkillData}/>
     </div>
   )
 }

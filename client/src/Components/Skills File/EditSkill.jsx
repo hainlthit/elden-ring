@@ -27,6 +27,10 @@ export default function EditSkill({id, skillObj, setIsEditing, handleUpdateClass
         setUpdatedEquipment(e.target.value)
     }
 
+    const refreshPage = ()=>{
+      window.location.reload();
+   }
+
     function handleSubmit(e) {
         e.preventDefault();
     
@@ -47,6 +51,7 @@ export default function EditSkill({id, skillObj, setIsEditing, handleUpdateClass
           .then((r) => r.json())
           .then((updatedClass) => handleUpdateClass(updatedClass))
           .then(() => setIsEditing(false))
+          .then(refreshPage)
       }
 
   return (

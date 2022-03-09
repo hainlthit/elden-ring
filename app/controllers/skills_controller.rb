@@ -1,4 +1,6 @@
 class SkillsController < ApplicationController
+    skip_before_action :authorized_user, only: [:index, :show, :create, :update, :destroy]
+    
     def index
         skill = Skill.all
         render json: skill, status: :ok
@@ -23,7 +25,7 @@ class SkillsController < ApplicationController
     def destroy
         skill = Skill.find(params[:id])
         skill.destroy
-        head :no_content 
+        render json: {}
     end 
 
     private

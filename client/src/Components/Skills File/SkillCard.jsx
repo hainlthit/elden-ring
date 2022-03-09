@@ -6,12 +6,17 @@ import Button from '@mui/material/Button';
 export default function SkillCard({skillObj, id, handleUpdateSkill, handleDeleteSkill}) {
     const [isEditing, setIsEditing] = useState(false);
 
+    const refreshPage = ()=>{
+      window.location.reload();
+   }
+
     function handleDelete(){
         fetch(`http://localhost:3000/skills/${id}`, { 
           method: 'DELETE',
         })
         .then((r) => r.json())
         .then((deletedSkill) => handleDeleteSkill(deletedSkill))
+        .then(refreshPage)
       }
 
   return (

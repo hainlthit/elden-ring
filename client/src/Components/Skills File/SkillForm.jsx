@@ -44,15 +44,7 @@ export default function SkillForm({handlePost}) {
           fp: fp,
           equipment: equipment
        }
-
-       console.log(newSkillObj)
-
-        fetch('/skills', {
-           method: 'POST',
-           headers: {'Content-Type': 'application/json'},
-           body:JSON.stringify(newSkillObj),
-           })
-           handlePost(newSkillObj)
+    handlePost(newSkillObj)
        
    }
   return (
