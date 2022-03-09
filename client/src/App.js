@@ -21,19 +21,18 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
 
-
-  // useEffect(() => {
-  //   fetch("/authorized_user")
-  //   .then((res) => {
-  //     if (res.ok) {
-  //       res.json()
-  //       .then((user) => {
-  //         setIsAuthenticated(true);
-  //         setUser(user);
-  //       });
-  //     }
-  //   });
-  // })
+  useEffect(() => {
+    fetch("/authorized_user")
+    .then((res) => {
+      if (res.ok) {
+        res.json()
+        .then((user) => {
+          setIsAuthenticated(true);
+          setUser(user);
+        });
+      }
+    });
+  })
 
   return (
     <div>
@@ -50,7 +49,7 @@ function App() {
             <Route exact path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} setUser={setUser} />} /> 
         </Routes>
         {isAuthenticated? <LoginAd/> : <p>Placeholder for "You need to make and Account" </p>}
-        <MainContainer/>
+        <MainContainer user={user} setUser={setUser}/>
     </div>
   )
   

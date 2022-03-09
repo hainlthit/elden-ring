@@ -6,7 +6,6 @@ import ClassesForm from './ClassesFile/ClassesForm';
 function Classes() {
   const [classData, setClassData] = useState([''])
 
-
   useEffect(() => {
     fetch('http://localhost:3000/er_classes')
       .then(r => r.json())

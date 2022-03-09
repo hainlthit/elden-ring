@@ -58,6 +58,7 @@ Skill.create(
     image: "https://eldenring.wiki.fextralife.com/file/Elden-Ring/square-off-skill-elden-ring-wiki-guide.jpg",
 )
 
+# comments
 Comment.create(
     message: "yo this game is crazy!",
     user_id: 1,
@@ -66,16 +67,73 @@ Comment.create(
     message: "so gnarly XD",
     user_id: 2,
 )
+Comment.create(
+    message: "so gnarly XD",
+    user_id: 2,
+)
+Comment.create(
+    message: "WoW!!!",
+    user_id: 3,
+)
+Comment.create(
+    message: "amazing, like seriously amazing!",
+    user_id: 3,
+)
+Comment.create(
+    message: "idk... it's too hard to play for me.",
+    user_id: 4,
+)
 
+# profiles
 Profile.create(
     username: "1234",
     color1: "#34ebbd",
     color2: "#7434eb",
 )
 
+Profile.create(
+    username: "ilolo",
+    color1: "#309421",
+    color2: "#d44654",
+)
+
+Profile.create(
+    username: "hain",
+    color1: "#eb3483",
+    color2: "##38260a",
+)
+
+Profile.create(
+    username: "test",
+    color1: "#34c3eb",
+    color2: "#eba434",
+)
+
+# users
 User.create(
     username: "1234",
     is_admin: false,
     profile_id: 1,
+    password: "1234",
+)
+
+User.create(
+    username: "ilolo",
+    is_admin: true,
+    profile_id: 2,
+    password: "1234",
+)
+
+User.create(
+    username: "hain",
+    is_admin: true,
+    profile_id: 3,
+    password: "1234",
+)
+
+User.create(
+    username: "test",
+    is_admin: false,
+    profile_id: 4,
     password: "1234",
 )
