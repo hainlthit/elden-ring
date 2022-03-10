@@ -107,30 +107,25 @@ Skill.create(
 )
 
 # comments
+
 Comment.create(
-    message: "yo this game is crazy!",
+    message: "awesome!",
     user_id: 1
 )
+
 Comment.create(
-    message: "so gnarly XD",
+    message: "absolutely insane",
     user_id: 2
 )
+
 Comment.create(
-    message: "so gnarly XD",
-    user_id: 2
-)
-Comment.create(
-    message: "WoW!!!",
+    message: "33.33 chance I finish this game, repeating of course",
     user_id: 3
 )
-Comment.create(
-    message: "amazing, like seriously amazing!",
-    user_id: 3
-)
-Comment.create(
-    message: "idk... it's too hard to play for me.",
-    user_id: 4
-)
+
+
+
+
 
 # profiles
 Profile.create(
