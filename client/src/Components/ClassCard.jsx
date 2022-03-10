@@ -5,12 +5,16 @@ export default function ClassCard({classObj, id, handleUpdateClass, handleDelete
 
   const [isEditing, setIsEditing] = useState(false);
 
+  const refreshPage = ()=>{
+    window.location.reload();
+ }
   function handleDelete(){
     fetch(`http://localhost:3000/er_classes/${id}`, { 
       method: 'DELETE',
     })
     .then((r) => r.json())
     .then((deletedClass) => handleDeleteClass(deletedClass))
+    .then(refreshPage)
   }
 
   return (

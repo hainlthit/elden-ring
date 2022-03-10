@@ -32,6 +32,54 @@ ErClass.create(
     image: "https://eldenring.wiki.fextralife.com/file/Elden-Ring/hero_class_elden_ring_wiki_guide_200px.png"
 )
 ErClass.create(
+    name: "Astrologer",
+    level: 6,
+    info: "Vigor 9, Dexterity 12, Mind 15, Intelligence 16, Endurance 9, Faith 7, Strength 8 	Arcane 9,",
+    weapons: "Short Sword Astrologer's Staff Scripture Wooden Shield ",
+    image: "https://eldenring.wiki.fextralife.com/file/Elden-Ring/astrologer_class_elden_ring_wiki_guide_200px.png"
+)
+
+ErClass.create(
+    name: "Bandit",
+    level: 5,
+    info: "Vigor 10, Dexterity 13, Intelligence 9, Mind 11, Endurance 10, Faith 8, Strength 9, Arcane 14,",
+    weapons: "Great Knife, Shortbow, Buckler Shields, Sleepbone Arrows",
+    image: "https://eldenring.wiki.fextralife.com/file/Elden-Ring/bandit_class_elden_ring_wiki_guide_200px.png"
+)
+
+ErClass.create(
+    name: "Bandit",
+    level: 5,
+    info: "Vigor 10, Dexterity 13, Intelligence 9, Mind 11, Endurance 10, Faith 8, Strength 9, Arcane 14,",
+    weapons: "Great Knife, Shortbow, Buckler Shields, Sleepbone Arrows",
+    image: "https://eldenring.wiki.fextralife.com/file/Elden-Ring/bandit_class_elden_ring_wiki_guide_200px.png"
+)
+
+ErClass.create(
+    name: "Bandit",
+    level: 5,
+    info: "Vigor 10, Dexterity 13, Intelligence 9, Mind 11, Endurance 10, Faith 8, Strength 9, Arcane 14,",
+    weapons: "Great Knife, Shortbow, Buckler Shields, Sleepbone Arrows",
+    image: "https://eldenring.wiki.fextralife.com/file/Elden-Ring/bandit_class_elden_ring_wiki_guide_200px.png"
+)
+
+ErClass.create(
+    name: "Bandit",
+    level: 5,
+    info: "Vigor 10, Dexterity 13, Intelligence 9, Mind 11, Endurance 10, Faith 8, Strength 9, Arcane 14,",
+    weapons: "Great Knife, Shortbow, Buckler Shields, Sleepbone Arrows",
+    image: "https://eldenring.wiki.fextralife.com/file/Elden-Ring/bandit_class_elden_ring_wiki_guide_200px.png"
+)
+
+ErClass.create(
+    name: "Bandit",
+    level: 5,
+    info: "Vigor 10, Dexterity 13, Intelligence 9, Mind 11, Endurance 10, Faith 8, Strength 9, Arcane 14,",
+    weapons: "Great Knife, Shortbow, Buckler Shields, Sleepbone Arrows",
+    image: "https://eldenring.wiki.fextralife.com/file/Elden-Ring/bandit_class_elden_ring_wiki_guide_200px.png"
+)
+
+ErClass.create(
     name: "Bandit",
     level: 5,
     info: "Vigor 10, Dexterity 13, Intelligence 9, Mind 11, Endurance 10, Faith 8, Strength 9, Arcane 14,",

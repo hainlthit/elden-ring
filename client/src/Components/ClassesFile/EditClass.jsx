@@ -24,6 +24,10 @@ export default function EditClass({id, classObj, setIsEditing, handleUpdateClass
         setUpdatedWeapons(e.target.value)
     }
 
+    const refreshPage = ()=>{
+      window.location.reload();
+   }
+
     function handleSubmit(e) {
         e.preventDefault();
     
@@ -43,6 +47,7 @@ export default function EditClass({id, classObj, setIsEditing, handleUpdateClass
           .then((r) => r.json())
           .then((updatedClass) => handleUpdateClass(updatedClass))
           .then(() => setIsEditing(false))
+          .then(refreshPage)
       }
 
   return (
