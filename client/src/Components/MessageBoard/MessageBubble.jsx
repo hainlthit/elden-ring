@@ -1,10 +1,10 @@
 import React from 'react'
 
 export default function MessageBubble({messages}) {
-console.log(messages)
+
     return (
     <div className="bubble">
-        <p>{messages.message}</p>    
+        <p>{messages.message} from: {messages?.user?.username} </p>    
     </div>
   )
 }

@@ -106,27 +106,6 @@ Skill.create(
     image: "https://eldenring.wiki.fextralife.com/file/Elden-Ring/square-off-skill-elden-ring-wiki-guide.jpg"
 )
 
-# comments
-
-Comment.create(
-    message: "awesome!",
-    user_id: 1
-)
-
-Comment.create(
-    message: "absolutely insane",
-    user_id: 2
-)
-
-Comment.create(
-    message: "33.33 chance I finish this game, repeating of course",
-    user_id: 3
-)
-
-
-
-
-
 # profiles
 Profile.create(
     username: "1234",
@@ -179,4 +158,40 @@ User.create(
     is_admin: false,
     profile_id: 4,
     password: "1234"
+)
+
+# comments
+Comment.create(
+    message: "awesome!",
+    user_id: 1
+)
+
+Comment.create(
+    message: "absolutely insane",
+    user_id: 2
+)
+
+Comment.create(
+    message: "33.33 chance I finish this game, repeating of course",
+    user_id: 3
+)
+
+Comment.create(
+    message: "so gnarly XD",
+    user_id: 2
+)
+
+Comment.create(
+    message: "WoW!!!",
+    user_id: 3
+)
+
+Comment.create(
+    message: "amazing, like seriously amazing!",
+    user_id: 3
+)
+
+Comment.create(
+    message: "idk... it's too hard to play for me.",
+    user_id: 4
 )
