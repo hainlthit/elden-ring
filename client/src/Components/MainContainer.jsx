@@ -1,10 +1,13 @@
 import React from 'react'
 import MainMessageTable from './MessageBoard/MainMessageTable'
 
-export default function MainContainer(user, setUser) {
+export default function MainContainer({user}) {
+
+
+
   return (
     <div>
-        <MainMessageTable user={user} setUser={setUser}/>
+        <MainMessageTable user={user} />
     </div>
   )
 }

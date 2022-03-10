@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 
-export default function MessageForm({renderPost, user, setUser, messageOnData, setMessageOnData }) {
+export default function MessageForm({user, messageData, setMessageData }) {
     
+  const [newMessageData, setNewMessageData] = useState("")
+  const [userID, setUserID] = useState("")
+  
 
     function handleSetMessageData(e) {
-        setMessageOnData(e.target.value)
+        setNewMessageData(e.target.value)
     }
 
     function handlePost(obj){
@@ -16,17 +19,23 @@ export default function MessageForm({renderPost, user, setUser, messageOnData, s
         .then(res => res.json())
         .then(data => {
           console.log(data)
-          setMessageOnData([...messageOnData, data])
+          setMessageData([...messageData, data])
           }
         )
+        setNewMessageData("")
     }
 
     function handleSubmit(e){
         e.preventDefault();
-        renderPost(messageOnData)
+
+        const messageObj = {
+          message: newMessageData,
+          user_id: user.user.id
+        }
+        handlePost(messageObj)
     }
 
-    console.log(messageOnData)
+    console.log(messageData)
   return (
     <div>
         <br/>
@@ -36,7 +45,7 @@ export default function MessageForm({renderPost, user, setUser, messageOnData, s
                 name="Text Message"
                 type="string"
                 placeholder="Send a Message"
-                value={messageOnData}
+                value={newMessageData}
                 onChange={handleSetMessageData}
                 className="message-form-input"
                 >

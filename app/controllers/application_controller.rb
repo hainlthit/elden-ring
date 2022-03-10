@@ -6,15 +6,18 @@ class ApplicationController < ActionController::API
 
   before_action :authorized_user  
   
+
+    
+private
+
   def current_user
-    User.find_by(id: session[:current_user])
+  User.find_by(id: session[:current_user])
   end
 
   def authorized_user
-      return render json: { error: "Not authorized" }, status: :unauthorized unless current_user
+    return render json: { error: "Not authorized" }, status: :unauthorized unless current_user
   end
-    
-private
+
     def render_unprocessable_entity(invalid)
         render json: {errors: invalid.record.errors.full_messages}, status: :unprocessable_entity
     end

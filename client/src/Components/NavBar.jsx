@@ -10,7 +10,7 @@ function NavBar({isAuthenticated, setIsAuthenticated, user, setUser}) {
         })
         .then(()=>{
             setIsAuthenticated(false)
-            setUser(null)
+            setUser('')
         })
     }
 
@@ -28,10 +28,10 @@ function NavBar({isAuthenticated, setIsAuthenticated, user, setUser}) {
                 </NavLink>
             </li>
             <li>
-               {user? <li onClick={logout}> Logout </li> : 
+               <li onClick={logout}> Logout </li> 
                <NavLink className="li-nav" to="/login" exact>
                     Login
-                </NavLink>} 
+                </NavLink>
             </li>
            
             {isAuthenticated?             
