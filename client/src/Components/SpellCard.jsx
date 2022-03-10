@@ -42,7 +42,7 @@ export default function SpellCard({ id, spellname, spelltype, image, effect, fp,
     
       ) : (
               <div className="card">
-  e
+
               <div className="card-content">
               <Link to={`/spells/${id}`}>
               <img alt={spellname} src={image}/>
