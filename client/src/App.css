@@ -199,3 +199,7 @@ li {
   background-color: #4870df;
   color: white;
 }
+
+.invisible {
+  display: none;
+}

@@ -2,7 +2,8 @@ import React from 'react'
 import SpellCard from './SpellCard';
 import {useEffect, useState} from "react";
 import SpellsForm from "./SpellsForm";
-import Container from '@mui/material/Container';
+import SpellDetail from './SpellDetail';
+
 
 function Spells() {
   const [spellData, setSpellData] = useState([''])
@@ -64,14 +65,29 @@ function Spells() {
     handleDeleteSpell={handleDeleteSpell}
   /> )
   
+  const spellDetails = spellData.map((spell)=>
+  
+  <SpellDetail
+    key = {spell.id}
+    id = {spell.id}
+    spellname={spell.spellname}
+    spelltype={spell.spelltype}
+    image={spell.image}
+    effect={spell.effect}
+    fp={spell.fp}
+    handleUpdateSpell={handleUpdateSpell}
+    handleDeleteSpell={handleDeleteSpell}
+  /> )
+  
   return (
     // <Container maxWidth="sm">
       <div>
         <h2>All Spells Listed Below:</h2>
         <div className='card-holder'>{spellCards}</div>
         <SpellsForm handlePost={handlePost} spellData={spellData} setSpellData={setSpellData}/>
+      
       </div>
-    // </Container>
+
   )
 }
 

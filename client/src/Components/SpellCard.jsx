@@ -42,13 +42,12 @@ export default function SpellCard({ id, spellname, spelltype, image, effect, fp,
     
       ) : (
               <div className="card">
-   <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={2}>
-        <Grid item xs={6} md={8}>
-            <Card variant="outlined" sx={{ minWidth: 100 }}>
+  e
               <div className="card-content">
-              <Link to={`/spells/${id}`}>See More</Link>
-            <img alt={spellname} src={image}/>
+              <Link to={`/spells/${id}`}>
+              <img alt={spellname} src={image}/>
+                </Link>
+            
                         <h4>{spellname}</h4> 
                         <p>Spell Type: {spelltype}</p> 
                         <p>FP: {fp}</p> 
@@ -64,10 +63,7 @@ export default function SpellCard({ id, spellname, spelltype, image, effect, fp,
             <br/>
             </div>
             </div>
-                        </Card>
-                        </Grid>
-                        </Grid>
-                        </Box>
+                       
             </div>
 
     )}
