@@ -15,6 +15,7 @@ import TemporaryDrawer from "../src/Components/TemporaryDrawer.jsx"
 import Spells from './Components/Spells';
 import Classes from './Components/Classes';
 import Skills from './Components/Skills File/Skills';
+import SpellDetail from './Components/SpellDetail';
 
 
 function App() {
@@ -49,6 +50,8 @@ function App() {
                   <Route exact path="/spells" element={<Spells/>} /> 
                   <Route exact path="/skills" element={<Skills/>} /> 
                   <Route exact path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} setUser={setUser} />} /> 
+                  <Route exact path="/spells/:id" element={<SpellDetail/>} />
+
               </Routes>
               {isAuthenticated? <LoginAd/> : <p>Placeholder for "You need to make and Account" </p>}
             <MainContainer user={user} setUser={setUser}/>

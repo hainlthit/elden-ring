@@ -4,6 +4,9 @@ import Card from '@mui/material/Card';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
+import {Link} from 'react-router-dom';
+
+
 
 export default function SpellCard({ id, spellname, spelltype, image, effect, fp, handleUpdateSpell, handleDeleteSpell}) {
 
@@ -44,6 +47,7 @@ export default function SpellCard({ id, spellname, spelltype, image, effect, fp,
         <Grid item xs={6} md={8}>
             <Card variant="outlined" sx={{ minWidth: 100 }}>
               <div className="card-content">
+              <Link to={`/spells/${id}`}>See More</Link>
             <img alt={spellname} src={image}/>
                         <h4>{spellname}</h4> 
                         <p>Spell Type: {spelltype}</p> 

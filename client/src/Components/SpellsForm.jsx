@@ -48,6 +48,11 @@ function SpellsForm({handlePost}) {
            fp: fp
         }
         handlePost(newSpellObj)
+        setSpellname("");
+        setSpelltype("");
+        setImage("");
+        setEffect("");
+        setFp("");
         
     }
    return (
@@ -91,7 +96,7 @@ function SpellsForm({handlePost}) {
         <input 
         name="effect"
         type="string"
-        placeholder="Spell goes boom!..."
+        placeholder="Spell effect..."
         value={effect}
         onChange={handleSetEffect}
         className="form-input"

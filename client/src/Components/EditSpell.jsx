@@ -33,9 +33,9 @@ export default function EditSpell({id, spellname, spelltype, image, effect, fp, 
     <option  key={spelltypedata.label} value={spelltypedata.value}>{spelltypedata.label}</option>
     )
 
-    const refreshPage = ()=>{
-        window.location.reload();
-     }
+    // const refreshPage = ()=>{
+    //     window.location.reload();
+    //  }
 
 
 
@@ -58,6 +58,7 @@ export default function EditSpell({id, spellname, spelltype, image, effect, fp, 
           .then((r) => r.json())
           .then((updatedSpell) => handleUpdateSpell(updatedSpell))
           .then(() => setIsEditing(false))
+          window.location.replace("http://localhost:4000/spells");
 
   }
       
