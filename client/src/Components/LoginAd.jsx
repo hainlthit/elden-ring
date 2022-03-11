@@ -2,7 +2,7 @@ import React from 'react'
 
 function LoginAd() {
   return (
-    <div><p>Welcome, You're Logged In!</p></div>
+    <div><h3>Welcome, You're Logged In!</h3></div>
   )
 }
 

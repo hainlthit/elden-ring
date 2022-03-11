@@ -18,7 +18,7 @@ function NavBar({isAuthenticated, setIsAuthenticated, user, setUser}) {
     <div id="div_top_hypers">
         <ul id="ul_top_hypers">
              <li>
-                <NavLink className="li-nav" to="/" exact>
+                <NavLink className="li-nav" to="/home" exact>
                     Home
                 </NavLink>
             </li>

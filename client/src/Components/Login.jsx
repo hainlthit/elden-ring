@@ -33,7 +33,6 @@ function Login({setIsAuthenticated, setUser}) {
           .then(user=>{
             setUser(user)
             setIsAuthenticated(true)
-          
           })
           
         } else {
@@ -41,7 +40,7 @@ function Login({setIsAuthenticated, setUser}) {
           .then(json => setErrors(json.error))
         }
       })
-      window.location.replace("http://localhost:4000/");
+      window.location.replace("http://localhost:4000/home");
 
     }
   

@@ -27,9 +27,10 @@
 }
 
 .main-content {
-  color: #ef8b09;
-  background-color: rgb(179, 179, 179);
-  /* background-image: url("https://preview.redd.it/e8u661wb0gx71.png?auto=webp&s=b1a7452aa81e8d5b4a729be62a852b9ecfcdc4e6"); */
+  color: #4870df;
+  /* background-color: rgb(179, 179, 179); */
+  background-position: center;
+  background-image: url("https://preview.redd.it/p0sodeszt0l61.jpg?auto=webp&s=3e88a78a78bf3e415014b9a09c5cdd04f58a0f0b");
   min-height: 100vh;
   background-size: 3400px;
   background-position: center;
@@ -45,25 +46,6 @@
 .nav {
   background-color: red;
 }
-
-/* 
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-
-  justify-content: space-between;
-  align-items: center;
-.profile {
-  width: 100%;
-  text-align: center;
-}
-
-.profile img {
-  width: 100%;
-  text-align: center;
-  width: 90%;
-  border-radius: 0;
-} */
 
 #div_top_hypers {
   background-color: #eeeeee;
@@ -82,7 +64,7 @@ li {
 /* cards */
 
 .card:hover {
-  background-color: #ef8b09;
+  background-color: #4870df;
   box-shadow: none;
   color: #161925 !important;
   transform: translate(4px, 3px);
@@ -119,7 +101,7 @@ li {
   cursor: pointer;
   border-radius: 5em;
   color: #fff;
-  background: linear-gradient(to right, #ef8b09, #f97502);
+  background: linear-gradient(to right, #4870df, #1b3a8f);
   border: 0;
   padding-left: 40px;
   padding-right: 40px;
@@ -169,8 +151,9 @@ li {
   float: center;
   margin: 0 2.5rem;
   box-shadow: 0 35px 20px -30px rgba(0, 0, 0, 0.1);
-  background-image: url("https://gpstatic.com/acache/42/66/1/uk/t620x300-9db06a53d8c94e1b18167908a402ff3b.jpg");
+  background-image: url("https://images4.alphacoders.com/115/thumb-1920-1151249.jpg");
   background-size: cover;
+  background-position: center;
   border-radius: 1.2rem;
 }
 
@@ -202,4 +185,11 @@ li {
 
 .invisible {
   display: none;
+}
+
+/* chat */
+
+.triangle {
+  border-color: transparent transparent #58b666 transparent;
+  margin-left: 15px;
 }
