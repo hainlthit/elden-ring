@@ -13,6 +13,7 @@ function NavBar({isAuthenticated, setIsAuthenticated, user, setUser}) {
             setUser('')
         })
     }
+    
 
   return (
     <div id="div_top_hypers">

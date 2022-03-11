@@ -231,3 +231,11 @@ li {
   box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
   transition: 0.3s;
 }
+
+/* darks */
+
+.dark {
+  color: #dcdcdc;
+  background-color: #181818 !important;
+  /* background-image: url("https://images.wallpapersden.com/image/download/elden-ring-4k_bWVnZWmUmZqaraWkpJRqZmdlrWdtbWU.jpg"); */
+}

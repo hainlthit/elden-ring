@@ -29,7 +29,7 @@ const [messageData, setMessageData] = useState([''])
 
   return (
     <div className="message-room">
-    <div className="messages-container">
+    <div className="messages-container" id="HTML">
        <div className='messages-header'> <h3>Message Board of the Gods</h3><hr/> </div>
        <div className='messages-info'> 
             <h5 className='messages-from'><br/></h5>
@@ -41,7 +41,7 @@ const [messageData, setMessageData] = useState([''])
        <MessageForm messageData={messageData} setMessageData={setMessageData} user={user} />
        
     </div>
-    <div className="messages-container-2">
+    <div className="messages-container-2" >
       
       </div>
     </div>

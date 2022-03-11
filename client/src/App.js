@@ -35,6 +35,15 @@ function App() {
   //   });
   // })
 
+  const [isClicked, setIsClicked] = useState(false)
+
+  function myFunction() {
+    let element = document.getElementById("HTML");
+   
+    element.classList.toggle("dark");
+    setIsClicked(isClicked => !isClicked);
+  }
+
   useEffect(() => {
     fetch("/authorized_user").then((response) => {
       if (response.ok) {
@@ -67,7 +76,7 @@ function App() {
            </div>
         </div>
         <footer className="footer">
-     
+        <button className="dark-mode-btn" onClick={myFunction}>{isClicked ? "☾" : "☼"}</button>
             <p>©2022 Hain & Ilolo</p>
         </footer>
     </div>
