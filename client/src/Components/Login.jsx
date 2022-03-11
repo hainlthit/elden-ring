@@ -45,7 +45,7 @@ function Login({setIsAuthenticated, setUser}) {
     }
   
     return (
-      <div>
+      <div className='login-card'>
         {/*  <div className='card'>  */}
         <form onSubmit={onSubmit}>
           

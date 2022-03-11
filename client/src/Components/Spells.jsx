@@ -47,6 +47,7 @@ function Spells() {
     .then(data => {
       console.log(data)
         setSpellData([...spellData,data])
+        window.location.replace("http://localhost:4000/spells");
       }
     )
 }

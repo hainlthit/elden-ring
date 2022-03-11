@@ -26,23 +26,19 @@ function Auth() {
         })
     }
     return (
-        <> 
+        <div className='login-card'> 
         <form onSubmit={onSubmit}>
         <label>
-          Username
-   
           <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
         </label>
-        <br/> <label>
-         Password
-    
+        <br/><br/> <label>
         <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
         </label>
-       
+        <br/>
         <br/> <input type="submit" value="Sign up!" />
       </form>
       {/* {errors?errors.map(e => <div>{e[0]+': ' + e[1]}</div>):null} */}
-        </>
+        </div>
     )
 }
 
