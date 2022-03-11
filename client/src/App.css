@@ -176,6 +176,7 @@ li {
   border: none;
   border-radius: 20px;
   margin-left: 10px;
+  margin-right: 60%;
   height: 20%;
   width: fit-content;
   font-size: 14px;
@@ -192,4 +193,9 @@ li {
 .triangle {
   border-color: transparent transparent #58b666 transparent;
   margin-left: 15px;
+}
+
+.sender {
+  float: right;
+  margin-right: 95%;
 }
