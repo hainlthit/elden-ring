@@ -30,13 +30,10 @@ const [messageData, setMessageData] = useState([''])
   return (
     <div className="message-room">
     <div className="messages-container">
-       <div className='messages-header'> <h3>Message Board of the Gods</h3> </div>
+       <div className='messages-header'> <h3>Message Board of the Gods</h3><hr/> </div>
        <div className='messages-info'> 
-            <h4 className='messages-from'>Tell us how you feel</h4>
-                <div className='messages-info-from'>
-                  <div id="messages_here"></div>
-                </div>
-            <h4 className='messages-to'>how you really really feel</h4>
+            <h5 className='messages-from'><br/></h5>
+            <h5 className='messages-to'><br/></h5>
                 <div className='messages-info-to'>
                 <MessageMap messageData={messageData}/>
                 </div>
