@@ -6,7 +6,6 @@ export default function MessageForm({user, messageData, setMessageData }) {
   const [userID, setUserID] = useState("")
 
   console.log(user)
-  
 
     function handleSetMessageData(e) {
         setNewMessageData(e.target.value)

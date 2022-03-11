@@ -48,43 +48,59 @@ ErClass.create(
 )
 
 ErClass.create(
-    name: "Bandit",
-    level: 5,
-    info: "Vigor 10, Dexterity 13, Intelligence 9, Mind 11, Endurance 10, Faith 8, Strength 9, Arcane 14,",
-    weapons: "Great Knife, Shortbow, Buckler Shields, Sleepbone Arrows",
-    image: "https://eldenring.wiki.fextralife.com/file/Elden-Ring/bandit_class_elden_ring_wiki_guide_200px.png"
+    name: "Warrior",
+    level: 16,
+    info: "Vigor 11, Dexterity 16, Intelligence 10, Mind 12, Endurance 11, Faith 8, Strength 10, Arcane 9,",
+    weapons: "Two Scimitars and a Riveted Wooden Shield ",
+    image: "https://eldenring.wiki.fextralife.com/file/Elden-Ring/warrior_class_elden_ring_wiki_guide_200px.png"
 )
 
 ErClass.create(
-    name: "Bandit",
-    level: 5,
-    info: "Vigor 10, Dexterity 13, Intelligence 9, Mind 11, Endurance 10, Faith 8, Strength 9, Arcane 14,",
-    weapons: "Great Knife, Shortbow, Buckler Shields, Sleepbone Arrows",
-    image: "https://eldenring.wiki.fextralife.com/file/Elden-Ring/bandit_class_elden_ring_wiki_guide_200px.png"
+    name: "Prisoner",
+    level: 9,
+    info: "A prisoner bound in an iron mask. Studied in glintstone sorcery, having lived among the elite prior to sentencing.",
+    weapons: "Magic Glintblade, Estoc, Glintstone Staff, Rift Shield",
+    image: "https://eldenring.wiki.fextralife.com/file/Elden-Ring/prisoner_class_elden_ring_wiki_guide_270px.png"
 )
 
 ErClass.create(
-    name: "Bandit",
-    level: 5,
-    info: "Vigor 10, Dexterity 13, Intelligence 9, Mind 11, Endurance 10, Faith 8, Strength 9, Arcane 14,",
-    weapons: "Great Knife, Shortbow, Buckler Shields, Sleepbone Arrows",
-    image: "https://eldenring.wiki.fextralife.com/file/Elden-Ring/bandit_class_elden_ring_wiki_guide_200px.png"
+    name: "Confessor",
+    level: 10,
+    info: "A church spy adept at covert operations. Equally adept with a sword as they are with incantations",
+    weapons: "Urgent Heal, Assassin's Approach, Broadsword, Finger Seal, Blue Crest Heater Shield",
+    image: "https://eldenring.wiki.fextralife.com/file/Elden-Ring/confessor_class_elden_ring_wiki_guide_270px.png"
 )
 
 ErClass.create(
-    name: "Bandit",
-    level: 5,
-    info: "Vigor 10, Dexterity 13, Intelligence 9, Mind 11, Endurance 10, Faith 8, Strength 9, Arcane 14,",
-    weapons: "Great Knife, Shortbow, Buckler Shields, Sleepbone Arrows",
-    image: "https://eldenring.wiki.fextralife.com/file/Elden-Ring/bandit_class_elden_ring_wiki_guide_200px.png"
+    name: "Wretch",
+    level: 1,
+    info: "As poor, purposeless and naked as they day they were born. A nice club is all they have.",
+    weapons: "club",
+    image: "https://eldenring.wiki.fextralife.com/file/Elden-Ring/wretch_class_elden_ring_wiki_guide_270px.png"
 )
 
 ErClass.create(
-    name: "Bandit",
-    level: 5,
-    info: "Vigor 10, Dexterity 13, Intelligence 9, Mind 11, Endurance 10, Faith 8, Strength 9, Arcane 14,",
-    weapons: "Great Knife, Shortbow, Buckler Shields, Sleepbone Arrows",
-    image: "https://eldenring.wiki.fextralife.com/file/Elden-Ring/bandit_class_elden_ring_wiki_guide_200px.png"
+    name: "Vagabond",
+    level: 9,
+    info: "A knight exiled from their homeland to wander. A solid, armor-clad origin",
+    weapons: "Longsword, Halberd, Heater Shield",
+    image: "https://eldenring.wiki.fextralife.com/file/Elden-Ring/vagabond_class_elden_ring_wiki_guide_270px.png"
+)
+
+ErClass.create(
+    name: "Prophet",
+    level: 7,
+    info: "A seer ostracized for inauspicious prophecies. Well versed in healing incantations",
+    weapons: "Heal, Catch Flame, Short Spear, Finger Seal, Rickety Shield",
+    image: "https://eldenring.wiki.fextralife.com/file/Elden-Ring/prophet_class_elden_ring_wiki_guide_270px.png"
+)
+
+ErClass.create(
+    name: "Samurai",
+    level: 9,
+    info: "A capable fighter from the distant land of reeds. Handy with Katana and Longbows.",
+    weapons: "Uchigatana, Longbow, Arrow, Fire Arrow, Red Thorn Roundshield",
+    image: "https://eldenring.wiki.fextralife.com/file/Elden-Ring/samurai_class_elden_ring_wiki_guide_270px.png"
 )
 
 #skills
