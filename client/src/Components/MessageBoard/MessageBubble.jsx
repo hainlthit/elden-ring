@@ -4,10 +4,9 @@ export default function MessageBubble({messages}) {
 
     return (
       <div>
-        <p className="sender">{messages?.user?.username} </p>
-        <div className="bubble">
-            <p>{messages.message}</p>  
-        </div>
+        <p className="sender">{messages?.user?.username} 
+        <p className="bubble">{messages.message}</p></p>
+            <br/>
       </div>
   )
 }
